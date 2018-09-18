@@ -1,0 +1,97 @@
+\documentclass[12pt, openright, twoside]{book}
+
+% <<<<<PACKAGES>>>>>
+\usepackage[utf8]{inputenc}
+\usepackage{calc} % to per­form arith­metic on the ar­gu­ments of the LATEX com­mands \set­counter, \ad­dto­counter, \setlength, and \ad­dtolength
+								% BIBLIOGRAPHY PACKAGES
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{cil.bib}
+
+\usepackage{amsmath}			% MATHEMATICS PACKAGES
+\usepackage{amsfonts}			%	V
+\usepackage{amssymb}			%	V
+
+\usepackage{chemfig}			% CHEMISTRY PACKAGES
+\usepackage[version=4]{mhchem} 	%	V
+\usepackage{chemformula}		%	V
+\usepackage{chemmacros}			%	V
+\usepackage{endiagram}			%	V
+\usepackage{mol2chemfig}		%	V
+
+
+\usepackage[T1]{fontenc}		% FONTS
+\usepackage{tgtermes} 			% body font
+\usepackage{tgheros} 			% sans-serif font
+\usepackage{inconsolata} 		% fixed width font
+\usepackage{upgreek}			% to pro­vide the up­right Greek let­ters from the Euler or Adobe Sym­bol fonts as ad­di­tional\\
+								%	math sym­bols (\textbackslash\{\}upal­pha, \textbackslash\{\}up­beta, etc.)
+
+\usepackage{graphicx}			% for proper handling of graphicss included in the document
+\usepackage{tabularx}			% for word-wrapping text in table columns
+\usepackage{url}				% provides hyperliked urls throughout the document, useful for electronic copies
+\usepackage{float}				% Im­proves the in­ter­face for defin­ing float­ing ob­jects such as 		fig­ures and ta­bles. 
+\usepackage{booktabs}			% en­hances the qual­ity of ta­bles in LATEX
+\usepackage{makeidx}			% index sorting engine
+
+\usepackage{dtk-logos}			% package for latex logos
+\usepackage{rotating}			% package for rotating tables and figures
+
+%define page size and margins etc. 
+\usepackage[paperwidth=6in, paperheight=9in]{geometry} 
+
+
+\usepackage{fancyhdr} 			%to format headers and footers
+\setlength{\headheight}{15.2pt}
+
+\usepackage[hang,flushmargin]{footmisc}  % to not indent footnotes
+\usepackage[small]{caption}  	% Captions and other tweaks - make caption text size smaller
+\usepackage{tocloft}  			% to typeset table of contents
+\usepackage[titletoc]{appendix}	% to properly display the Appendix in the TOC
+
+%\usepackage[backref, colorlinks, bookmarks=true]{hyperref}
+%\usepackage[cross, letter,center]{crop} %%Crop marks
+
+\usepackage{verbatimbox}		% Control font size of verbatim text
+\usepackage{pdfpages}			% Include pdf pages in a document
+\usepackage{balance}			% to balance placement of floats for optimum output
+\usepackage{booktabs}			% to enhance the quality of tables
+\usepackage[all]{nowidow}		% to minimize orphans/widows on page breaks
+
+
+\floatstyle{ruled} 
+\restylefloat{figure}
+
+% Invoke all modules of chemmacros
+\usechemmodule{all}
+
+% preamble:
+% uses siunits (loaded by endiagram)
+\DeclareSIUnit{\calory}{cal}
+\sisetup{per-mode = fraction}
+
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+
+
+\setlength{\abovecaptionskip}{1.2ex}  %% Make space above and below captions smaller too
+\setlength{\belowcaptionskip}{-1.5ex}
+
+
+\newcommand{\allsectionsfont}{\normalfont\sffamily} % make section headers sans-serif to stand out
+\newfloat{Structure}{tbp}{lop}	% define new float type for structures
+\newfloat{Reaction}{tbp}{lop}	% define new float type for reactions
+
+
+\let\oldverbatim\verbatim 		% make all verbatim (code blocks) text smaller, just for stylistic reasons
+\renewcommand\verbatim{\small\oldverbatim}
+\renewcommand{\cftchapfont}{\sffamily}
+\renewcommand{\cftchappagefont}{\sffamily}
+\renewcommand{\cfttoctitlefont}{\hfill\Huge\sffamily}  %format title of TOC to match chapter head format as set below:
+
+%\includeonly{frontmatter, intro}
+
+\setcounter{tocdepth}{2}		%% set level of header and subsection numbering is shown in TOC
+\setcounter{secnumdepth}{2}
+\author{Robert D. Solimeno}
+\makeindex
+\listfiles
+\usepackage{hyperref}			% make pdf bookmarks with hyperlinks (problem child package list last)

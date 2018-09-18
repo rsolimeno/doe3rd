@@ -1,0 +1,64 @@
+\documentclass[12 pt, letterpaper]{book}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage{makeidx}
+\textheight      8.5 in
+\makeindex
+\begin{document}
+
+\title{
+\begin{center}
+\includegraphics[scale=0.5]{LogoColorTextBelow}
+\end{center}
+\textsc{Introduction to Applied Statistics and Design Of Experiments}
+\bigskip
+\author{Robert D. Solimeno, PhD}\\
+\copyright 2010 Immersitech LLC\\
+All Rights Reserved}
+\date{}
+\maketitle
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+\addtocontents{DOE-week_course.lof}{}
+\addtocontents{DOE-week_course.lot}{}
+
+\part{Introductory Statistics}
+\include{StatsIntro}
+
+\part{Design of Experiments -- I\\
+Full and Fractional Factorial Designs}
+\include{DOE1-text}
+
+\part{Design of Experiments -- II\\
+Response Surface Methodology}
+\include{DOE2-text}
+
+
+
+
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Appendices}
+
+\appendix
+
+\input t-table.tex
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Index}
+
+\input 2x2matrix.tex
+
+\clearpage
+\input 2x3matrix.tex
+
+\clearpage
+\input 2x4matrix.tex
+
+\printindex
+\end{document}
