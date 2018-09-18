@@ -1,7 +1,7 @@
 \chapter{Introduction}
 \section{Population Statistics}
 
-\textbf{Population statistics} involve data from the entire universe of a subject under study.  For example, the population might consist of all of the widgets produced and sold to customers.  In another circumstance one might deal with smaller, physical populations such as a specific lot of super widgets produced at Factory ''A.'' \\
+\textbf{Population statistics} \index{statistics!population} involve data from the entire universe of a subject under study.  For example, the population might consist of all of the widgets produced and sold to customers.  In another circumstance one might deal with smaller, physical populations such as a specific lot of super widgets produced at Factory ''A.'' \\
 
 All of the data elements are part of this universe and any calculated statistic is based on the entire population data set. Population statistics are denoted by Greek letters, e.g. $ \mu \ and \ \sigma $\\
 \index{population}
@@ -20,7 +20,7 @@ All of the data elements are part of this universe and any calculated statistic 
 
 \index{average}\index{standard deviation}
 \section{Sample Statistics}
-In contrast, \textbf{Sample statistics} involve a relatively small sample of data taken from the population (universe) of data elements that belong to the entire population under study.  The sample data set is best selected in random fashion so that it adequately represents the characteristics of the whole population.
+In contrast, \textbf{Sample statistics} \index{statistics!sample} involve a relatively small sample of data taken from the population (universe) of data elements that belong to the entire population under study.  The sample data set is best selected in random fashion so that it adequately represents the characteristics of the whole population.
 
 Sample statistics are denoted by English letters, and these statistics \textit{infer} what we can learn about the population.\\
 
@@ -42,8 +42,8 @@ Sample statistics are also known as \textsl{Inferential Statistics} since they \
 When one measures some \textsl{samples} from a \textsl{population}, then one may evaluate two types of statistics:
 
 \begin{enumerate}
-\item Location statistics, e.g. $ \bar{x} $ (average) and
-\item Variation statistics, e.g. $ s $ (standard deviation)
+\item Location statistics, e.g. $ \bar{x} $ (average) and \index{statistics!location}
+\item Variation statistics, e.g. $ s $ (standard deviation) \index{statistics!variation}
 \end{enumerate}
 \index{average}\index{standard deviation}
 \subsection{Location Statistics}
@@ -51,16 +51,16 @@ When one measures some \textsl{samples} from a \textsl{population}, then one may
 Location statistics describe where the data are located, for example, on a number line.  An analogy many people can relate to is pulling a car into a parking space or into a garage.  Ideally the driver wants to ''locate'' the vehicle in the center of the parking lane or the parking spot in the garage.  Each time a driver pulls into a parking spot though, the location is not always exactly the same. There are several location statistics that can describe where the driver parks the vehicle most often.
 
 \subsubsection{Location statistics: Average}\index{average}
-
+\index{statistics!location}
  
- There are at least three ways to express average:\index{mean}\index{median}\index{mode}
+ There are at least three ways to express average:\index{average!mean}\index{average!median}\index{average!mode}
 \begin{itemize}
   \item \textbf{Mean}:	sum $ n $ observations and divide by $ n $
   \item \textbf{Median}:	of $ n $ sorted observations, the $ n/2 $nd observation
   \item \textbf{Mode}:	the highest frequency observation of $ n $ observations
 \end{itemize}
 
-Location statistics describe the tendency of a set of data to be located in a place of interest.  These can be described (as shown in the list above) by a most common location, most frequent, or a mid-point.\\
+Location statistics \index{statistics!location} describe the tendency of a set of data to be located in a place of interest.  These can be described (as shown in the list above) by a most common location, most frequent, or a mid-point.\\
 
 \index{location}
 
@@ -69,12 +69,12 @@ Location statistics describe the tendency of a set of data to be located in a pl
 \begin{equation} \bar{x} =  Sample \  mean\end{equation}
 
 
-\subsection{Variation Statistics}\index{average}
+\subsection{Variation Statistics} \index{statistics!variation}
 
 Variation statistics describe how consistent (or not) a set of data may be around a location.  Once again using the parking space analogy from an earlier section, the variation statistic is like the maximum width of all of the attempts at pulling into the parking space.  How wide does a parking space need to be to accommodate the \textsl{average} driver?  This analogy is not precise, but it is convenient for a later topic about specification limits.  Nevertheless, it is assumed that the reader grasps the notion of variation here: how widely something varies about a given location.\index{location}
 
 \subsubsection{Variation statistics: std dev \& range}
-\index{standard deviation}\index{variance}
+\index{standard deviation}\index{variance}  \index{statistics!variation} \index{standard deviation}
   \begin{itemize}
   \item Standard deviation, \textbf{s}   is a measure of how much a set of observations \textsl{vary}
   \item Variance is the square of standard deviation
@@ -132,7 +132,7 @@ Hopefully this process is never out of specification!
 \index{accuracy}\index{precision}\index{average}
 Accuracy is a measure of how close a measurement is to the true value of the property being measured.  The closer the (average) measured value is to the ''true value'' (usually unknown) reflects a higher degree of accuracy in the measurement.  One cannot rely on a single measurement so normal practice is to repeat measurements on a single sample or multiple samples (if the test is destructive) and to report the average value. Figure \ref{fig1} depicts accuracy versus precision graphically. The Central Limit Theorem states that:
 \begin{quote}
-conditions under which the sum of a sufficiently large number of independent random variables, each with finite mean and variance, will be approximately normally distributed.\footnote{Rice, John (1995), Mathematical Statistics and Data Analysis (Second ed.), Duxbury Press.} \index{mean}
+conditions under which the sum of a sufficiently large number of independent random variables, each with finite mean and variance, will be approximately normally distributed.\cite{rice1995mathematical} \index{mean}
 \end{quote}
 \index{average}\index{variance}\index{variation}
 Thus the average value of a ''sufficiently large number of independent random variables'' will tend to be closer to the true value than will any single observation.  This however, does not necessarily infer that the variation is small!
