@@ -1,0 +1,11 @@
+#! /bin/bash
+NAME=`echo "$1" | cut -d'.' -f1`
+pdflatex -file-line-error -halt-on-error $NAME
+biber $NAME
+makeindex $NAME
+pdflatex $NAME
+makeindex $NAME
+pdflatex $NAME
+makeindex -s HeadLet.ist -o mybookind.tex $NAME
+pdflatex $NAME
+evince $NAME.pdf

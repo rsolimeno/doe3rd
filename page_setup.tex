@@ -1,0 +1,20 @@
+\pagestyle{fancy} 				%use fancyheader
+
+%% fiddle with chaptermark so we can make it not all caps
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+%% get rid of any existing header and footer and header rule
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+% now make the footer the way we want it:
+% page number on right side of footer for  odd pages
+\rfoot[]{\small{\textsf{\hspace{0.25cm} \thepage}}}
+\fancyhfoffset[EL]{0cm} %this looks like it doesn't do anything, but
+%it seems to remind it to line up headers with
+%the rest of the text
+
+%page number and chapter name on left side of footer for even pages
+\lfoot[\small{\textsf{\thepage \hspace{0.25cm} \leftmark}}]{}
