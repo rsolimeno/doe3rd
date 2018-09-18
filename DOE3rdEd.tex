@@ -1,32 +1,42 @@
-\documentclass[12 pt, letterpaper]{book}
-\usepackage{amsmath}
-\usepackage{microtype}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{tabularx}
-\usepackage{makeidx}
-\textheight      8.5 in
-\makeindex
+%\documentclass[12 pt, letterpaper]{book}
+%\usepackage{amsmath}
+%\usepackage{microtype}
+%\usepackage{graphicx}
+%\usepackage{color}
+%\usepackage{tabularx}
+%\usepackage{makeidx}
+%\textheight      8.5 in
+%\makeindex
+\input{book_preamble}
 \begin{document}
 
-\title{
-\begin{center}
-\includegraphics[scale=0.5]{LogoColorTextBelow}
-\end{center}
-\textsc{Introduction to Applied Statistics and Design Of Experiments}
-\bigskip
-\author{Robert D. Solimeno, PhD}\\
-\copyright 2010 Immersitech LLC\\
-All Rights Reserved}
-\date{}
-\maketitle
+%\title{
+%\begin{center}
+%\includegraphics[scale=0.5]{LogoColorTextBelow}
+%\end{center}
+%\textsc{Statistics and Design Of Experiments for Chemists}
+%\bigskip
+%\author{Robert D. Solimeno, PhD}\\
+%\copyright 2010 Immersitech LLC\\
+%All Rights Reserved}
+%\date{}
+%\maketitle
+%
+%
+%\tableofcontents
+%\listoffigures
+%\listoftables
+%\addtocontents{DOE-week_course.lof}{}
+%\addtocontents{DOE-week_course.lot}{}
 
+\frontmatter
+\include{frontmatter}
+\input{front_lists}
+\include{intro}
 
-\tableofcontents
-\listoffigures
-\listoftables
-\addtocontents{DOE-week_course.lof}{}
-\addtocontents{DOE-week_course.lot}{}
+\mainmatter
+% Setup Header and Foot styles for main document
+\input{page_setup}
 
 \part{Introductory Statistics}
 \include{StatsIntro}
@@ -39,26 +49,41 @@ Full and Fractional Factorial Designs}
 Response Surface Methodology}
 \include{DOE2-text}
 
-
-
-
-
 \cleardoublepage
-\addcontentsline{toc}{chapter}{Appendices}
 
-\appendix
+%Appendices
+\begin{appendices}
+	% Appendix A -- Percentage Points of the t	Distribution
+	\include{t-table.tex}
+	% Appendix B -- 2-Factor, 2-Level Factorial	Response Matrix
+	\include{2x2matrix.tex}
+	% Appendix C -- 3-Factor, 2-Level Factorial	Response Matrix
+	\include{2x3matrix.tex}
+	% Appendix D -- 4-Factor, 2-Level Factorial	Response Matrix
+	\include{2x4matrix.tex}
+\end{appendices}
 
-\input t-table.tex
+\backmatter
+
+% Include the backmatter in the Table of Contents
 \cleardoublepage
-\addcontentsline{toc}{chapter}{Index}
+\addcontentsline{toc}{chapter}{\bibname}
 
-\input 2x2matrix.tex
+% Bibliography
+\printbibliography
+\cleardoublepage
 
-\clearpage
-\input 2x3matrix.tex
+% Index
+\phantomsection 
+\addcontentsline{toc}{chapter}{Index}{}
+%\printindex
+\input{mybookind}
 
-\clearpage
-\input 2x4matrix.tex
+\makeatletter
+\@openrightfalse
+\makeatother
 
-\printindex
+% Colophon
+\include{colophon}
+
 \end{document}
