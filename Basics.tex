@@ -1,0 +1,110 @@
+\chapter{Putting the basics to work}
+
+\section{A typical work environment}
+In a normal work environment, such as a biology, chemistry, or quality assurance lab most technicians already use some of the statistics covered in this text.  Taking a number of measurements, conveniently set to 3 or maybe 5 samples is the standard practice.  Reporting the mean value of a test result is already the norm.  Engineers also often collect data in the form of an observational study, or observational data are obtained through the analysis of historical data.
+\index{mean}\index{average}
+Here's a synopsis of the typical situation:
+\begin{center}
+  \begin{itemize}
+  \item Take a number of samples (depending on convenience of collection or available historical data)
+  \item Do the measurement(s) and/or calculate average values
+  \item Fill out a form (on paper or on the computer)
+  \item Compare to the product specification(s)
+  \item Decide whether the samples ''pass'' or ''fail'' the specification
+  \end{itemize}
+\end{center}  
+  
+Are both location and variation statistics considered here?  How does one actually decide whether the sample will ''pass'' or ''fail?''  If the (average) result just barely traverses a specification limit, does the production manager look at the raw data and seek one or more ''outliers?''  If the result is undesirable, is the test run again?\index{variation}\index{location}\index{average}
+  
+\section{Evaluating the quality of a process}
+\index{variation}\index{location}\index{confidence}\index{t Distribution}
+Fortunately, there is an unequivocal way to describe a result that cannot be refuted.  This method requires the use of both location and variation statistics and uses the \textit{Student's t Distribution} to calculate a \textit{confidence interval} as the criterion to establish if the result is significantly different -- \textit{statistically significant} -- at the desired level of confidence.
+
+\subsection{Calculating the confidence interval}
+\index{confidence}
+\begin{center}
+\begin{equation}
+\bar{x} \pm t \cdot \frac{s}{\sqrt{N}}
+\end{equation}
+\end{center}
+
+\textbf{Example: calculating the 95\% confidence interval}\\
+
+Data: 7.5, 7.9, 8.3\\
+
+$ \bar{x} $ = 7.9  s = 0.40\\
+
+$ N = 3$, thus $(N-1)$ degrees of freedom = 2 \\
+
+The value for $ t $ comes from a table of the Student’s $ t $ distribution by selecting the column of the table that corresponds with $ \alpha $ for the desired level of confidence, or $1-\alpha$ (in this case, 95\% confidence corresponds with $ \alpha = 0.05 $ -- two tails).  The row of the table corresponds to the $(N-1)$ degrees of freedom (in this case, 2 degrees of freedom). Using these values to select the correct column and row leads us to arrive at a value of: 4.303\\  (see Appendix \ref{AppendixA}).
+
+\begin{center}
+\begin{equation}
+\bar{x} \pm 4.303 \cdot \frac{0.40}{\sqrt{3}}  =0.99
+\end{equation}
+
+\end{center}
+\index{confidence}
+The 95\% confidence interval is: $ 7.9 \pm \ 0.99 $\\
+
+The method for communicating these results unequivocally is to state them as such: \textit{This laboratory is 95\% confident that the true value is between 6.91 and 8.89.}
+
+NOTE: When an interval is calculated as in the example above, it must be understood that the \textit{true value} (that is always elusive and unknown) \textit{can be anywhere within that interval}.
+
+\subsection{Does the product meet specification?}
+
+Now that measurements have been made, and basic statistics have been calculated, a decision must be made to determine if specification criteria have been met.  Continuing with the example from above, let's assume the lower and  upper specification limits are set at the following values:
+
+\begin{center}
+\begin{equation}
+LSL = 6.9  \hspace{0.5in}  USL = 8.9 
+\end{equation}
+
+\end{center}
+
+Then we can depict the relationship between the confidence interval and the specification limits graphically (see Figure \ref{fig2}).
+\begin{figure}[h]\caption{Representation of a measurement and 95\% C.I. within specification limits}\label{fig2}
+\begin{center}
+\includegraphics[scale=0.5]{spec1}
+\end{center}
+\end{figure}
+
+This makes it obvious that the results indicate the product tested meets the specification criteria --- barely.  The 95\% confidence interval shown above is within the specification limits, but there is still a 5\% chance that the true value lies somewhere \textit{beyond} those limits.  In most cases this is an acceptable risk. In other circumstances where a failure could mean catastrophe or even loss of life, a higher degree of confidence is needed that results in a much wider interval.\\
+
+
+Calculating the 99\% confidence interval:\\
+
+
+The new value for $ t $  from a table of the Student’s $ t $ distribution: 9.925\\
+
+\begin{center}
+\begin{equation}
+\bar{x} \pm 9.925 \cdot \frac{0.40}{\sqrt{3}}  = 2.292 
+\end{equation}
+\end{center}
+
+The 99\% confidence interval is: $ 7.9 \pm \ 2.292 $\\
+
+
+\textit{This laboratory is 99\% confident that the true value is between 5.608 and 10.192.}\\
+
+This new interval in relation to the specification limits looks like that shown in Figure \ref{fig3}:
+
+\begin{figure}[h]\caption{Representation of a measurement and 99\% C.I. traversing specification limits}\label{fig3}
+\begin{center}
+\includegraphics[scale=0.5]{spec2}
+\end{center}
+\end{figure}
+
+Just as obvious as in the previous case, if this were a mission critical specification the test result clearly shows that the product does not meet the performance criteria.  Whenever a confidence interval traverses a specification limit, even if it is only one-sided, then one must conclude that the specification is not met.  Proper selection of the confidence level will provide the tolerable risk of having an incorrect conclusion.  
+\newpage
+\section{Exercises}
+\begin{enumerate}
+\item Describe a work environment from your past experiences in which data were collected, some analysis done, and results reported.  Specify how the data were reported, number of samples evaluated, calculations performed, etc.
+
+\item What is a \textit{confidence interval}?
+
+\item How does one find the correct value for $ t $ in a table of the Student's t distribution (see Appendix \ref{Appendix})?
+
+\item When reporting a result with 95\% confidence, what is the chance that this statement is wrong?
+\end{enumerate}

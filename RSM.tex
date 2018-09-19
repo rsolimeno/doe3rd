@@ -1,0 +1,182 @@
+% Response Surface Methodology
+
+\chapter{Response Surface Methodology}
+Response Surface Methodology (RSM) comprises a variety of statistical techniques to model and analyze a process under study with the goal of optimizing a response that is under the influence of several variables. A response surface can be represented graphically to aid the investigator in visualizing the nature of the system under study. The contours of response surfaces are often plotted for desired constant levels of a response.  Contour plots may be overlaid for several desired properties of a system to guide the researcher to locate an optimum region of operation.
+
+This short course goes beyond screening designs and full factorial designs to cover \textit{practical response surface and simplex optimization experiments}.  Response surface designs that extend the factorial space previously learned in  \textsc{Design Of Experiments -- I} will be emphasized.  Students will learn how to develop a logical plan, to identify key variables, and to map response surfaces of interest to optimize a process.
+
+Also covered in this short course is simplex optimization, also sometimes referred to as evolutionary operations, or EVOP.  While not strictly a ''designed'' experiment like the response surface designs this method is a valuable procedure when dealing with a process in which the stakes are high (prohibitively expensive to run full or even fractional factorials) and the production management is extra cautious about making aggressive changes.  Small incremental steps can be taken, and when evidence of success is demonstrated to management further experimentation is usually approved. The simplex method effectively crawls the invisible response surface to lead to a desired minimum or maximum, i.e. optimum level.
+
+\section{Central Composite Designs}
+
+This short course and this chapter focus on the standard (circumscribed) Central Composite Design, or CCD.  There is good reason for this: this experiment design has good properties including little collinearity, it is rotatable, it shares orthogonal blocks with associated factorial designs, and is insensitive to outliers and missing data. This design is the one recommended for general use when constraints on the design space for the subject under study are not an issue.
+
+\section{Design space}
+The Central Composite Design (CCD) is a very natural extension of regular factorial designs.  It is a symmetric, rotatable design that begins with a factorial design space.  The same design points are retained and to this are added new points for a second, superimposed $2^{k}$ factorial that emerges from rotating the design space about its center by 45 degrees.  Figure \ref{ccd} shows this relationship graphically. A CCD is denoted as rotatable when the variance of any predicted value of the response for any level of the factors depends only on the distance of the point from the center of the design, regardless of the direction.
+
+\begin{figure}[h]\caption{Generation of Central Composite Design points (red + blue points) from a $2^{2}$ Factorial Design (blue points)}\label{ccd}
+\begin{center}
+\includegraphics[scale=0.35]{CCD}
+\end{center}
+\end{figure}
+
+The CCD experiment can be run as a next step after doing the related factorial design -- a $2^{2}$ design space forms a circle from the factorial square design, and the $2^{3}$ CCD space is a sphere formed by rotation of the $2^{3}$ factorial cube.  The three-factor design space is depicted graphically in Figure \ref{ccd3}.  The new axial points (+/- $\alpha$) in the CCD are a distance of $\sqrt{2}$ from the center point compared to the +/- 1 distance from the center point to the factorial points.  In essence, this is the distance of the 45-45-90 triangle formed by diagonally bisecting a quadrant of the factorial square.
+
+\begin{figure}[h]\caption{Generation of Central Composite Design points (red + blue points) from a $2^{3}$ Factorial Design (blue points)}\label{ccd3}
+\begin{center}
+\includegraphics[scale=0.65]{CCD3}
+\end{center}
+\end{figure}
+
+Planning a CCD experiment requires much the same preparation as in planning for a factorial experiment.  If a factorial experiment precedes the CCD then the effort required in the planning stage is reduced contingent upon the level of planning completed for the factorial experiment. The pamphlet \textit{Planning and Executing an Experiment} may be used as a guide or template for planning any designed experiment. Once the planning document has been drafted the details of the design can be logically applied.\\
+
+
+There are three types of central composite designs:
+
+\begin{enumerate}
+\item Central Composite Circumscribed (CCC)
+
+\item Central Composite Inscribed (CCI)
+
+\item Central Composite Face Centered (CCF)
+\end{enumerate}
+
+\begin{figure}[h]\caption{Comparison of the types of Central Composite Designs points}\label{comp}
+\begin{center}
+\includegraphics[scale=0.75]{ccd-comp}
+\end{center}
+\end{figure}
+Figure \ref{comp} gives a graphical comparison of these three versions of the central composite design.
+
+\section{Properties}
+The standard, or circumscribed CCD with the axial points at +/- $\alpha$ is the design of preference. This is because it has good properties including little multicollinearity, it is rotatable, it shares block orthogonality with associated factorial designs, and is insensitive to outliers and missing data. 
+
+Multicollinearity is bad: this indicates that the experimental factors are correlated with each other. In this situation as one factor changes another also changes -- they are not truly independent variables. The circumscribed central composite design is robust and avoids this problem.
+
+The fact that the standard CCD is rotatable is a good thing. The response variation as predicted by a model for the CCD is constant at a given distance from the center point of the design. Thus the variation is lowest in the region of interest -- near the center of the design space.
+
+Block orthogonality is a good property that the CCD shares with factorial designs. This means that the effects of any blocks is independent of the effects of the variables -- there is no correlation between a given block and any of the factors. The ability of an experiment design to be free and independent of correlation between factors or factors and blocks allows for the estimation of unbiased effects.
+
+\section{Models}
+The initial step in response surface modeling is to determine a worthy mathematical description of the relationship between a response, $y$, and a set of independent variables (the factors). A \textbf{first-order model} (equation \ref{first-order}) is used to test for fit to the data and has the following form:
+
+\begin{equation}\label{first-order}
+y = \beta_{0} + \beta_{1} x_{1} + \beta_{2} x_{2} + \cdots + \beta_{k} x_{k} + \epsilon
+\end{equation}
+
+Quite often there is curvature in the system and then a polynomial of higher order is needed to adequately fit the data.  The \textbf{second-order model} (equation \ref{second-order})
+
+\def\doublesum{\mathop{\sum\!\sum}}
+\begin{equation}\label{second-order}
+y = \beta_{0} + \sum_{i=1}^k \beta_{i} x_{i} + \sum_{i=1}^k \beta_{ii} x^{2}_{i} + \doublesum_{i<j} \beta_{ii} x_{i}x_{j} + \epsilon
+\end{equation}
+
+provides for the existence of curvature in the system under study. Nearly all response surface model problems will use one of these models.  Even with a good fitting polynomial, a reasonable fit an approximation to the true response over the entire space of the factors is unlikely.  Nevertheless, these models do work well over smaller regions of interest which typically is the focus of an industrial experiment design.
+
+The model parameters are estimated by the method of least squares.  These parameters are estimated most efficiently when the data are derived from a planned experiment using response surface designs like the Central Composite Design. The fitted model is tested for adequacy by a ''lack of fit'' (LOF) test and when the model has poor lack of fit (in other words, it fits pretty well) it may be used to approximate the response of the actual system under study.   
+
+\section{Least Squares Estimation of Model Parameters}
+Fitting the models given in equations \ref{first-order} and \ref{second-order} involve choosing the $\beta's $ in those equations that yield the minimum squared error between the data and the fitted model. A visualization of what this means is given with an example of fitting a straight line to a set of data points in Figure \ref{leastsq}.  
+
+\begin{figure}[h]\caption{Least Squares visualization}\label{leastsq}
+\begin{center}
+\includegraphics[scale=0.5]{leastsq}
+\end{center}
+\end{figure}
+
+The squared distances of each data point (represented by red squares in Figure \ref{leastsq}) from the fitted line are summed - and the minimum value of those summed differences (i.e. ''least squares'') gives the best fit.  This is a simple linear regression.
+
+Fitting the models in equations \ref{first-order} and \ref{second-order} require multiple linear regression. The least squares algorithm for problems of multiple linear regression is most easily accomplished through the use of matrix math.  Using the first-order model from equation \ref{first-order} we can represent the matrix notation as follows:
+\mathversion{bold}
+\begin{equation}
+y = X\beta + \epsilon 
+\end{equation}
+
+
+which is written in long form as
+
+\begin{equation}  
+\left[
+		\begin{array}{c}
+		y_{1}\\
+		y_{2}\\
+		\vdots\\
+		y_{n}
+		\end{array}
+		\right] = 
+\left[
+		\begin{array}{ccccc}
+		1 & x_{11} & x_{12} & \dots & x_{1k}\\
+		1 & x_{21} & x_{22} & \dots & x_{2k}\\
+		\vdots & \vdots  & \vdots  &  & \vdots \\
+		1 & x_{n1} & x_{n2} & \dots & x_{nk}
+		\end{array}
+		\right]
+\left[
+		\begin{array}{c}
+		\beta_{1}\\
+		\beta_{2}\\
+		\vdots\\
+		\beta_{n}	
+		\end{array}
+		\right]
++ \left[
+		\begin{array}{c}
+		\epsilon_{1}\\
+		\epsilon_{2}\\
+		\vdots\\
+		\epsilon_{n}
+		\end{array}
+		\right]
+\end{equation}
+
+\mathversion{normal}
+
+The goal in this analysis is to find a vector of estimates, $b$, for $\beta$ in which the sum of the squares of the residuals are at a minimum.  It turns out that this is accomplished by
+
+
+\mathversion{bold}
+\begin{equation}
+b = (X'X)^{-1} X'y  
+\end{equation}
+\mathversion{normal}
+
+The fitted regression model is then given by
+
+\mathversion{bold}
+\begin{equation}
+\hat{y} = Xb
+\end{equation}
+\mathversion{normal}
+
+and in scalar notation the regression equation is
+
+\begin{equation}
+\hat{y}_{i} = b_{0} + \sum^{k}_{j=1} b_{j} x_{i,j}
+\end{equation}
+
+and the difference between the actual observations $y_{i}$ and the fitted values $\hat{y}_{i}$ are the \textbf{residuals}, $e_{i} = y_{i} - \hat{y}_{i}$, and the vector of residuals is denoted by
+
+\mathversion{bold}
+\begin{equation}
+e = y - \hat{y}.
+\end{equation}
+\mathversion{normal}
+
+In practice, one would turn to a variety of available computer software to carry out these calculations.  While not an exhaustive list, some examples include Minitab, Design-Expert, ECHIP, S-Plus, SAS, SAS-JMP, Statistica, etc.  These software packages do the analysis and present results in a format that is easy to interpret.  In addition, the visualization of the fitted surfaces and contour plots is made a simple matter of point and click operations to get what you desire.
+
+\section{Method of Steepest Ascent}
+Response surface methods, irrespective of the design of choice, are intended to be done in some sequence of experiments to ultimately reach a desired optimum response (or combination of responses). Most often the starting point of a design will not be near the actual optimum. The objective in applying this statistical tool is to reach the optimum as rapidly as possible with the greatest economy. 
+
+In applying the \textbf{Method of Steepest Ascent} we assume that the starting conditions of the experimental factors are not in the vicinity of the optimum response.  It is reasonable to also assume that a first-order model is adequate to approximate the true response surface in a small experimental region. In fact, it is assumed that the practitioner has already done an initial factorial experiment around known factor levels to establish a direction for the next set of experiments. The fitted first order model, given earlier in equation \ref{first-order}, is used to generate a contour surface plot of the desired response.  The direction of steepest ascent is normal to that in which the response, $\hat{y}$, is a series of parallel lines. Normal practice is to take the path of steepest ascent through the center of the region of interest and normal to the surface contour lines.
+
+\begin{figure}[h]\caption{Steepest ascent from contours of response surface}\label{contours}
+\begin{center}
+\includegraphics[scale=0.4]{contours}
+\end{center}
+\end{figure}
+
+Doing experiments is like working in a very dark room with a tiny penlight to get a glimpse of the immediate vicinity.\label{penlight}  The method of steepest ascent described here serves to take the investigator quickly and efficiently to the general vicinity of the \textit{optimum} -- but the investigator's penlight is more like a strobe.  Another experiment (with a corresponding number of runs sufficient for the design) must be done to fire the penlight flash to actually see if the optimum is indeed withing the new experimental space or if additional movement of the experimental space is needed to get close to the optimum. The reader should understand by this point that the response surface methodology is very much a sequential procedure.
+
+
+

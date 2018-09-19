@@ -1,0 +1,58 @@
+\chapter{Simplex Optimization}
+
+What is a simplex? It is a geometric figure that has a number of vertices equal to one more than the number of dimensions of the factor space. So in a system of two factors, e.g. temperature and pressure, the simplex has $k+1=3$ vertices and therefore is a \textit{triangle}. Taking this a step further since it is well known that three points define a \textit{plane}, this simplex plane is considered a planar approximation of the (unknown) response surface in the region of interest.
+
+\section{Evolutionary Operation - EVOP}\label{evop}
+Evolutionary operation, developed by George Box in the 1950's, is a very pragmatic technique of systematic experimentation.  Using the system of two factors as an example, three combinations of the factors forming a triangular experimental space are evaluated.  From the responses determined at these three points conditions of the worst response is eliminated.  Next, a projection of the coordinates of the worst response through the average coordinates of the remaining two vertices establishes a new test condition and defines a new simplex triangle.
+
+This method of sequential movement away from worst responses has the effect of crawling toward the optimum condition on a response surface.  The benefit of this methodology in a manufacturing environment is that small, incremental changes can be made while producing salable product. Simplex EVOP has two major advantages over the classical factorial approach:
+
+\begin{enumerate}
+\item the number of experiments in an initial simplex is only $k+1$ instead of $2^{k}$ in the initial factorial design (arithmetic versus geometric growth with increasing $k$), and
+
+\item simplex requires only one new experiment to move into an adjacent experimental region of factor space while the factorial design requires at least one-half the number of experiments in the factorial design.
+\end{enumerate}
+
+So should the experimenter just forget about factorial designs and use simplex EVOP for everything?  Absolutely not!\\
+
+
+The simplex is very effective and efficient at moving rapidly on a response surface toward the optimum.  However, when the simplex method has located the region of the optimum it then becomes very inefficient, though still effective, at finding the exact location of the optimum. The recommended approach is to switch to a more powerful experimental design strategy, a CCD for example, for exploring the region of optimum response.
+
+\section{Simplex calculations}\label{simplex-calc}
+Consider a two-factor system from which we desire to optimize the response (a maximum) by use of the sequential simplex algorithm.  Let's assume factor $x_{1}$ corresponds to pressure (in atmospheres)  and $x_{2}$ corresponds to temperature (in degrees Celcius).
+
+\begin{figure}[h]\caption{Initial Simplex}\label{initsimplex}
+\begin{center}
+\includegraphics[scale=0.75]{initsimplex}
+\end{center}
+\end{figure}
+
+The response at coordinate $(1,4)$ is the vertex with the worst (\textbf{W}) response; $(1,12)$ is next best (\textbf{NB}), and the vertex at $(3,8)$ is the best (\textbf{B}). Imagine a point $P$ located at the centroid of the segment joining vertex \textbf{B} and \textbf{NB}. The procedure for reflecting the simplex then becomes very straight-forward:
+
+\begin{enumerate}
+\item Initially, reject the vertex \textbf{W} (worst response),
+\item on all subsequent moves, reject the vertex that was labelled \textbf{NB} in the \textit{previous} simplex,
+\item project through the average of \textbf{NB} and \textbf{B} a desired distance to establish a new vertex,
+\item evaluate the response using the settings at the new vertex coordinate,
+\item determine assignments (\textbf{W}, \textbf{NB} and \textbf{B}) for the new simplex.
+\end{enumerate}
+
+The movement from one simplex to the next can move quite easily in this fashion.  When climbing a response surface in which vertex \textbf{NB} and \textbf{B} differ \textit{significantly} the method works effectively and efficiently moving toward the optimum.  So how doe we ensure that he difference between \textbf{NB} and \textbf{B} is \textit{significant}?  The Student's t-test, of course.
+
+The response measurement statistics, calculation of $t_{calc}$, decision to proceed, and calculation of new coordinates can all be readily accomplised in a spreadsheet.  Figure \ref{ss-evop1} shows the spreadsheet for the simplex depicted in Figure \ref{initsimplex} above.
+
+\begin{figure}[h]\caption{Simplex EVOP spreadsheet for two factors}\label{ss-evop1}
+\begin{center}
+\includegraphics[scale=0.3]{ss-evop1}
+\end{center}
+\end{figure}
+
+
+Aside from the location and variation statistics of the responses for each vertex in the simplex under study, the key calculations are that of $\overline{P} = \Sigma/n$ (where $\overline{P}$ is the midpoint, or average of the line segment $NB$---$B$) and subsequently $R = \overline{P} + (\overline{P} - W)$, where $R$ corresponds to the coordinates of the next condition to test that forms a new simplex with $NB$ and $B$. The ''permission'' to proceed with evaluating the new condition $R$ is derived by rejecting the null hypothesis of the Student's t-test such that  $t_{calc} > t_{critical}$.  Of course, the $t_{critical}$ value changes with the number of observations of the response, $n$, and this value can either be taken from a published table or by use of a built-in function of the spreadsheet software.
+
+The \textbf{criterion to proceed} with a new condition $R$ in the previous paragraph cannot be overemphasized. If one should encounter a simplex in which the null hypothesis cannot be rejected, then this may suggest a vicinal optimum. If this is indeed the case then it is likely that small differences exist in the response at each vertex.  This may be ''good enough'' for a production process or the investigator may choose to locate an exact optimum by conducting a factorial experiment (with the investment of a larger number of runs) to properly model the surface aroud the optimum.
+
+\section{Comparison to factorial designs}
+In section \ref{penlight} an analogy was made comparing experimentation to being in a dark room.  If using the method of steepest ascent with factorial designs is like holding a penlight in the dark, then using simplex \textsc{evop} is just using pushpins on a blank board.  While both factorial designs and simplex optimization are response surface methods they are different tools that complement each other.  
+
+As described in section \ref{evop}, the great strength of the simplex method is the economy in experimental runs to reach the vicinity of the optimum.  This is achieved at the expense of deriving a model of the surface, mapping the experimental region of interest, and visualizing the response surface model.  These are the strengths of the factorial designs, like the CCD, that cost more (in terms of experimental runs and effort) but yield more information.

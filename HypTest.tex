@@ -1,0 +1,167 @@
+\chapter{Hypothesis Testing}
+\section{Statistical Hypotheses}\index{mean}\index{standard deviation}\index{confidence}\index{hypothesis}
+In the previous chapters we discussed how to calculate the mean and standard deviation and to unequivocally state the value of a measurement (or series of measurements) at a desired confidence level.  Many technical problems involve the determination of whether to accept or reject a statement about some measured parameter.  For example, does the result given in the previous chapter help the technologist decide if it meets a specification limit?  In these circumstances a hypothesis is stated, and the decision making process about the hypothesis is called hypothesis testing.
+
+This is perhaps one of the most useful aspects of statistics (inferential statistics) since many types of technical problems involving decision making can be formulated in terms of a hypothesis statement. The hypothesis can be tested at a desired level of confidence to either accept or reject it based on numerical results.
+
+\section{Pass or Fail?}\index{variation}\index{location}\index{confidence}\index{hypothesis}
+As the lab technologist you have run multiple measurements, calculated the location and variation statistics, and calculated the desired confidence interval.  Does the sample pass or fail the manufacturing specification?  Hypothesis testing (sometimes also known as a significance test) is the tool of inferential statistics that will help you make an affirmative statement.
+
+\section{Types of data}
+In order to properly choose the proper ''tool'' we must first decide the kind of data that we have. There are two different types of data:
+\begin{enumerate}
+\item Attribute data: things that are counted as discrete events (e.g. defects, number of copier jams or mis-feeds, etc.)
+\item Continuous data: things that are measured on a continuous scale (e.g. \% moisture, thickness, mass, length, etc.)
+\end{enumerate}
+
+\subsection{Attribute Data}
+For this type of discrete data the tests and null hypotheses are given in Table \ref{tab1}:\\
+
+\index{null hypothesis}
+\begin{table}[h]\caption{Null Hypotheses for Discrete Data}\label{tab1}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{Test} & \textbf{Null Hypothesis}, $H_{o}$  \\ 
+\hline 1 proportion & $\%Population =  ''Value'' $\\ 
+\hline 2 proportions & $\%Population_{1} = \%Population_{2}$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{table}
+\subsection{Continuous data}
+Continuous data, also known as variable data, are evaluated using the tests and null hypotheses found in Table \ref{tab2}:
+\index{mean}\index{variance}\index{null hypothesis}
+\begin{sidewaystable}[h]\caption{Null Hypotheses for Continuous Data}\label{tab2}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline \textbf{Test} & \textbf{Null Hypothesis}, $H_{o}$ \\ 
+\hline 1-sample t-test & $\mu_{1} = value$ \\ 
+\hline 2-sample t-test (independent samples) & $\mu_{1} = \mu_{2}$ two population means are equal \\ 
+\hline paired t-test (dependent samples) & $\mu_{1} = \mu_{2}$ \\ 
+\hline 1 way ANOVA & $\mu_{1} = \mu_{2}$  \dots $= \mu_{k}$ \\ 
+\hline 1 variance, $\sigma^{2}$ &  $ \sigma =  value$ \\ 
+\hline 2 variance & $\sigma_{1} = \sigma_{2}$ \\ 
+\hline equal variances & $\sigma_{1} = \sigma_{2}$ \dots $= \sigma_{k}$  \\ 
+\hline normality & population \underline{is normal} \\ 
+\hline correlation (linear relationship only) & populations \underline{are not} correlated  \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{sidewaystable}
+
+\section{Six steps to hypothesis testing}\index{hypothesis}
+There are six steps to take in order to make the appropriate test for any particular situation:
+\index{null hypothesis}
+\begin{enumerate}
+\item Have an idea
+\item Translate the idea into statistical terms
+\item Choose the Test whose null hypothesis $ H_{o} $ either agrees with or contradicts the \textbf{idea}
+\item Sampling Step -- Determine the sample size and gather data
+\item Analyze: find the p-value 
+\item Decision: if p is low, reject $ H_{o} $
+\end{enumerate}
+
+\subsection{Have an idea}
+
+This is a basic first step to define what question you desire to answer.  The ''idea'' needs to be developed and stated such that a question can be appropriately answered.  For example, a cereal manufacturer wants to determine whether the box filling process is on target.  The target fill weight for (the population of) cereal boxes is 365 grams.
+
+One can state the ''idea'' for this situation as such: ''The average (mean) fill weight for cereal boxes is 365 grams.''
+\index{mean}\index{average}
+
+\subsection{Translate the idea into statistical terms}
+
+Now that the idea has been articulated, one can translate this into statistical terms. In this example we can state the situation as such:
+
+\begin{center}
+\begin{equation}
+\mu = 365 g
+\end{equation}
+\end{center}
+
+
+\subsection{Choose the Test}
+\index{null hypothesis}\index{hypothesis}
+The next step in hypothesis testing is to choose the appropriate test.  The way to do this is very straight-forward:  choose the test whose null hypothesis, $H_{o}$, either agrees with or contradicts the IDEA.  From the section above, we stated the IDEA to be $ \mu = 365 g $, and this form of a null hypothesis, e.g. $ \mu = $ \textit{value} (where \textit{value} is given by the study) equates to the 1-sample t-test.  
+
+\subsection{Sampling Step}
+At this step in the process it is time to decide how many samples are to be taken, how they will be taken (or document how they already have been taken), and what measurements will need to be taken.  It is good practice to standardize routine tasks by developing a data record form, either paper or electronic, to facilitate and error-proof as much as possible the data collection process.  In many cases there is abundant historical data to sift through.  In some circumstances though, fresh observations need to be collected and this step may be the most laborious step.  If this is the case, the standardization of data entry mentioned above will serve this situation well.
+
+\subsection{Analyze}\index{mean}\index{standard deviation}
+Calculation of means and standard deviations are carried out in this step.  The real analysis takes place by means of determining the $p-value$ which can often be done by referring to a t-table in the appendix of a textbook (see also Appendix \ref{Appendix}). Finding the $p-value$ requires a ''backward'' use of the table -- finding the t-value in the table and then looking up the $p-value$ at the top of the appropriate column.  However, interpolation is most often required. Statistical software can be applied to give immediate and precise results at minimal effort.
+
+\begin{sidewaystable}
+	\begin{center}
+\begin{tabular}{llllllll}
+\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std Dev} & \textbf{SE Mean} & \textbf{95\% CI} & \textbf{T} & \textbf{P} \\ \index{mean}
+Box Weight & 6 & 366.705 & 2.403 & 0.981 & (364.183, 369.226) & 1.74 & 0.143 \\ 
+\end{tabular} 
+\end{center}
+	\caption{1-sample t-test result for an example, the test of $ \mu = 365 g $ }
+\end{sidewaystable}
+
+
+\subsection{Decision}\index{null hypothesis}
+Now it is time to interpret the results and render a decision.  To make a decision, one must choose the significance level, $\alpha$ (alpha) before doing the test.  In this case $\alpha = 0.05$ which is a common value used for many tests.  Different values can be chosen --- higher or lower --- depending on the sensitivity required for the test and the consequences of incorrectly rejecting the null hypothesis.  Yes, there is some risk here!  But the analyst can choose the level of risk that is reasonable and tolerable for the given situation.  In many cases, the $\alpha = 0.05$ significance level is quite appropriate.
+
+Therefore, based on $\alpha = 0.05$ one compares the $p-value$ to $\alpha$ -- and the decision is made as such: \textit{if P is low (less than or equal to $\alpha$), reject $H_{o}$.}
+
+\begin{center}
+\LARGE If P is low, reject $H_{o}$.
+\end{center}
+\index{confidence}\index{null hypothesis}
+So what if P is not low, as in the case above ($p = 0.143$)?  Then we ''fail to reject'' the null hypothesis - in other words ''we don't really know.''  Significance tests only provide evidence when refuting the null hypothesis.  In cases such as this when the null hypothesis cannot be rejected, ''we don't really know'' in the strictest statistical sense. So in this example, we cannot refute the hypothesis that  $ \mu = 365 g $ - however we cannot go so far to affirm that indeed  $ \mu = 365 g $, we simply cannot reject this hypothesis at the 95\% level of confidence.\\
+
+\subsection{Power}
+There is a possibility that the result of a statistical test such as this will not reject the null hypothesis when a real difference truly exists.  This is called a ''Type II error'' -- or ''False Negative.''  This \textit{possibility}, or more precisely this \textbf{probability} is $ \beta $, and thus
+
+\begin{center}
+\begin{equation}
+Power = 1 - \beta
+\end{equation} 
+\end{center}
+ Therefore, \textbf{Power} is the probability of detecting a difference in between two populations \textit{when one truly exists}. In the case postulated above in which a Type II error is suspect, it is possible that the Power was insufficient.  To decrease the chance of a Type II error one must increase the statistical Power of the test.  Usually this is achieved by increasing $N$ (i.e. taking more samples).
+\index{confidence}
+\begin{table}[h]\caption{Significance test result matrix}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline   Do Not Reject $H_{o}$  &  Do Not Reject $H_{o}$   \\
+ $p = 1-\alpha = $ Confidence & $p = \beta = 1-Power$ \\
+  \textbf{GOOD} & \textbf{BAD} -- ''Type II error'' \\
+  & ''False Negative'' \\
+\hline Reject $H_{o}$ & Reject $H_{o}$ \\
+ $ p = \alpha$ & $p= Power = f(\alpha, N, \sigma, d)$  \\
+ \textbf{BAD} -- ''Type I error''    & \textbf{GOOD} \\
+ ''False Positive''  &  \\
+\hline 
+\end{tabular} 
+\end{center}
+\end{table}
+\newpage
+\section{Exercises}
+
+\begin{enumerate}
+\item Are these samples the same or are they different?
+
+\begin{tabular}{|c|c|}
+\hline \textbf{Sample 1} & \textbf{Sample 2} \\ 
+\hline 14.59 & 14.62 \\ 
+\hline 15.01 & 14.69 \\ 
+\hline 15.47 & 14.95 \\ 
+\hline 15.56 & 14.76 \\ 
+\hline 15.05 & 14.87 \\ 
+\hline 
+
+\end{tabular}\\
+\index{confidence}
+\item Calculate $ \bar{x}, s, $ and 95\% confidence intervals for \textbf{Sample 1} and \textbf{Sample 2} from the table above.
+\item Plot the mean values using a line chart (\textbf{Sample 1}, \textbf{Sample 2}, and \textbf{Sample 3} from the table below) with 95\% confidence intervals as error bars.\index{mean}
+
+\begin{tabular}{|r|r|r|r|}
+\hline Obs. & \textbf{Sample 1} & \textbf{Sample 2} & \textbf{Sample 3} \\ 
+\hline 1 & 7.5 & 7.2 & 7.7 \\ 
+\hline 2 & 7.9 & 7.4 & 7.9 \\ 
+\hline 3 & 8.3 & 6.9 & 8.3 \\ 
+\hline 
+\end{tabular} 
+
+\end{enumerate}
