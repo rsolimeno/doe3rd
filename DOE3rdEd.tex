@@ -1,34 +1,7 @@
-%\documentclass[12 pt, letterpaper]{book}
-%\usepackage{amsmath}
-%\usepackage{microtype}
-%\usepackage{graphicx}
-%\usepackage{color}
-%\usepackage{tabularx}
-%\usepackage{makeidx}
-%\textheight      8.5 in
-%\makeindex
 \input{book_preamble}
+%\overfullrule=2cm
+
 \begin{document}
-
-%\title{
-%\begin{center}
-%\includegraphics[scale=0.5]{LogoColorTextBelow}
-%\end{center}
-%\textsc{Statistics and Design Of Experiments for Chemists}
-%\bigskip
-%\author{Robert D. Solimeno, PhD}\\
-%\copyright 2010 Immersitech LLC\\
-%All Rights Reserved}
-%\date{}
-%\maketitle
-%
-%
-%\tableofcontents
-%\listoffigures
-%\listoftables
-%\addtocontents{DOE-week_course.lof}{}
-%\addtocontents{DOE-week_course.lot}{}
-
 \frontmatter
 \include{frontmatter}
 \input{front_lists}
@@ -40,31 +13,35 @@
 
 \part{Introductory Statistics}
 \include{StatsIntro}
+\include{Basics}
+\include{HypTest}
 
-\part{Design of Experiments -- I\\
-Full and Fractional Factorial Designs}
-\include{DOE1-text}
+\part{Design of Experiments}
+\include{IntroDOE}
+\include{FullFac}
+\include{FracFac}
+\include{RSM}
 
-\part{Design of Experiments -- II\\
-Response Surface Methodology}
-\include{DOE2-text}
+\part{Evolutionary Operations}
+\include{Simplex}
+
 
 \cleardoublepage
 
 %Appendices
 \begin{appendices}
 	% Appendix A -- Percentage Points of the t	Distribution
-	\include{t-table.tex}
+	\input{t-table.tex}
 	% Appendix B -- 2-Factor, 2-Level Factorial	Response Matrix
-	\include{2x2matrix.tex}
+	\input{2x2matrix.tex}
 	% Appendix C -- 3-Factor, 2-Level Factorial	Response Matrix
-	\include{2x3matrix.tex}
+	\input{2x3matrix.tex}
 	% Appendix D -- 4-Factor, 2-Level Factorial	Response Matrix
-	\include{2x4matrix.tex}
+	\input{2x4matrix.tex}
 \end{appendices}
 
-\backmatter
 
+\backmatter
 % Include the backmatter in the Table of Contents
 \cleardoublepage
 \addcontentsline{toc}{chapter}{\bibname}
