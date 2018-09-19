@@ -1,9 +1,9 @@
 \chapter{Introduction}
 \section{Population Statistics}
 
-\textbf{Population statistics} \index{statistics!population} involve data from the entire universe of a subject under study.  For example, the population might consist of all of the widgets produced and sold to customers.  In another circumstance one might deal with smaller, physical populations such as a specific lot of super widgets produced at Factory ''A.'' \\
+\textbf{Population statistics} \index{statistics!population} involve data from the entire universe of a subject under study.  For example, the population might consist of all the widgets ever produced and sold to customers. For  chemical producer it may comprise all of the historical physical property data for each product made.  In another circumstance one might deal with smaller, physical populations such as a specific lot of material produced at Factory ``A.''
 
-All of the data elements are part of this universe and any calculated statistic is based on the entire population data set. Population statistics are denoted by Greek letters, e.g. $ \mu \ and \ \sigma $\\
+All of the data elements are part of this universe and any calculated statistic is based on the entire population data set. Population statistics are denoted by Greek letters, e.g. $ \mu \ and \ \sigma $
 \index{population}
 
 \begin{center}
@@ -22,7 +22,7 @@ All of the data elements are part of this universe and any calculated statistic 
 \section{Sample Statistics}
 In contrast, \textbf{Sample statistics} \index{statistics!sample} involve a relatively small sample of data taken from the population (universe) of data elements that belong to the entire population under study.  The sample data set is best selected in random fashion so that it adequately represents the characteristics of the whole population.
 
-Sample statistics are denoted by English letters, and these statistics \textit{infer} what we can learn about the population.\\
+Sample statistics are denoted by English letters, and these statistics \textit{infer} what we can learn about the population.
 
 \begin{center}
 \begin{equation}
@@ -35,7 +35,7 @@ s = standard \ deviation
 
 \end{center}
 
-Sample statistics are also known as \textsl{Inferential Statistics} since they \textsl{infer} information about the population as a whole, based on the characteristics of the sample.  In this course we will deal exclusively with sample statistics, as this directly applies to the subject matter for the majority of experimentalists.  In certain disciplines, genetics for example, population statistics are appropriately applied.  When in doubt, the use of samples statistics will be correct most of the time.
+Sample statistics are also known as \textsl{Inferential Statistics} \index{statistics!inferential}since they \textsl{infer} information about the population as a whole, based on the characteristics of a sample.  In this book we will deal exclusively with sample statistics, as this directly applies to the subject matter for the majority of chemical technologists.  In certain disciplines, genetics for example, population statistics are appropriately applied.  When in doubt, the use of sample statistics will be correct most of the time.
 
 \section{Location versus Variation statistics}\index{location}
 
@@ -48,7 +48,7 @@ When one measures some \textsl{samples} from a \textsl{population}, then one may
 \index{average}\index{standard deviation}
 \subsection{Location Statistics}
 
-Location statistics describe where the data are located, for example, on a number line.  An analogy many people can relate to is pulling a car into a parking space or into a garage.  Ideally the driver wants to ''locate'' the vehicle in the center of the parking lane or the parking spot in the garage.  Each time a driver pulls into a parking spot though, the location is not always exactly the same. There are several location statistics that can describe where the driver parks the vehicle most often.
+Location statistics describe where the data are located, for example, on a number line.  Let's use an analogy that many people may relate to: pulling a car into a parking space or into a garage.  Ideally the driver wants to ``locate'' the vehicle in the center of the parking lane or the parking spot in the garage.  Each time a driver pulls into a parking spot though, the location is not always \textit{exactly} the same. There are several location statistics that can describe where the driver parks the vehicle \textit{most often}.
 
 \subsubsection{Location statistics: Average}\index{average}
 \index{statistics!location}
@@ -60,7 +60,7 @@ Location statistics describe where the data are located, for example, on a numbe
   \item \textbf{Mode}:	the highest frequency observation of $ n $ observations
 \end{itemize}
 
-Location statistics \index{statistics!location} describe the tendency of a set of data to be located in a place of interest.  These can be described (as shown in the list above) by a most common location, most frequent, or a mid-point.\\
+Location statistics \index{statistics!location} describe the tendency of a set of data to be located in a place of interest.  These can be described (as shown in the list above) by a most common location, most frequent, or at the mid-point of a range.
 
 \index{location}
 
@@ -82,7 +82,7 @@ Variation statistics describe how consistent (or not) a set of data may be aroun
   \end{itemize}
   
   
-Formulas for population statistics:\\
+Formulas for population statistics:
 
 \begin{center}
 \begin{equation}
@@ -94,7 +94,7 @@ Formulas for population statistics:\\
 \end{equation}
 \end{center}
 
-Formulas for sample statistics:\\
+Formulas for sample statistics:
 
 \begin{center}
 \begin{equation}
@@ -106,7 +106,7 @@ s^{2} = {\frac{1}{n-1}\displaystyle\sum_{i=1}^{n}{\left( x_{i}-\mu\right)}^2 }
 \end{equation}
 \end{center}
 
-where $ n $ corresponds to the sample size, e.g.  $ n = 5$.\\
+where $ n $ corresponds to the sample size, e.g.  $ n = 5$.
 
 \begin{center}
 \begin{equation}
@@ -115,7 +115,8 @@ Range = max - min
 
 \end{center}
 \index{range}
-Remember this ... the example will help you remember what we are talking about:\\
+Remember this ... the example will help you remember what we are talking about:
+
  \begin{center}\textsl{\begin{Large}Pulling cars into a garage\end{Large}}\end{center}
 
 \index{variation}
@@ -159,288 +160,6 @@ Precision is comprised of both \textit{repeatability} (same observer doing repea
 \item How are location statistics and variation statistics related to accuracy and precision?
 \end{enumerate}
 
-\chapter{Putting the basics to work}
 
-\section{A typical work environment}
-In a normal work environment, such as a biology, chemistry, or quality assurance lab most technicians already use some of the statistics covered in this text.  Taking a number of measurements, conveniently set to 3 or maybe 5 samples is the standard practice.  Reporting the mean value of a test result is already the norm.  Engineers also often collect data in the form of an observational study, or observational data are obtained through the analysis of historical data.
-\index{mean}\index{average}
-Here's a synopsis of the typical situation:
-\begin{center}
-  \begin{itemize}
-  \item Take a number of samples (depending on convenience of collection or available historical data)
-  \item Do the measurement(s) and/or calculate average values
-  \item Fill out a form (on paper or on the computer)
-  \item Compare to the product specification(s)
-  \item Decide whether the samples ''pass'' or ''fail'' the specification
-  \end{itemize}
-\end{center}  
-  
-Are both location and variation statistics considered here?  How does one actually decide whether the sample will ''pass'' or ''fail?''  If the (average) result just barely traverses a specification limit, does the production manager look at the raw data and seek one or more ''outliers?''  If the result is undesirable, is the test run again?\index{variation}\index{location}\index{average}
-  
-  
-\section{Evaluating the quality of a process}
-\index{variation}\index{location}\index{confidence}\index{t Distribution}
-Fortunately, there is an unequivocal way to describe a result that cannot be refuted.  This method requires the use of both location and variation statistics and uses the \textit{Student's t Distribution} to calculate a \textit{confidence interval} as the criterion to establish if the result is significantly different -- \textit{statistically significant} -- at the desired level of confidence.
 
-\subsection{Calculating the confidence interval}
-\index{confidence}
-\begin{center}
-\begin{equation}
-\bar{x} \pm t \cdot \frac{s}{\sqrt{N}}
-\end{equation}
-\end{center}
-
-
-\textbf{Example: calculating the 95\% confidence interval}\\
-
-Data: 7.5, 7.9, 8.3\\
-
-$ \bar{x} $ = 7.9  s = 0.40\\
-
-$ N = 3$, thus $(N-1)$ degrees of freedom = 2 \\
-
-The value for $ t $ comes from a table of the Student’s $ t $ distribution by selecting the column of the table that corresponds with $ \alpha $ for the desired level of confidence, or $1-\alpha$ (in this case, 95\% confidence corresponds with $ \alpha = 0.05 $ -- two tails).  The row of the table corresponds to the $(N-1)$ degrees of freedom (in this case, 2 degrees of freedom). Using these values to select the correct column and row leads us to arrive at a value of: 4.303\\  (see Appendix \ref{Appendix}).
-
-\begin{center}
-\begin{equation}
-\bar{x} \pm 4.303 \cdot \frac{0.40}{\sqrt{3}}  =0.99
-\end{equation}
-
-\end{center}
-\index{confidence}
-The 95\% confidence interval is: $ 7.9 \pm \ 0.99 $\\
-
-The method for communicating these results unequivocally is to state them as such: \textit{This laboratory is 95\% confident that the true value is between 6.91 and 8.89.}
-
-NOTE: When an interval is calculated as in the example above, it must be understood that the \textit{true value} (that is always elusive and unknown) \textit{can be anywhere within that interval}.
-
-\subsection{Does the product meet specification?}
-
-Now that measurements have been made, and basic statistics have been calculated, a decision must be made to determine if specification criteria have been met.  Continuing with the example from above, let's assume the lower and  upper specification limits are set at the following values:
-
-\begin{center}
-\begin{equation}
-LSL = 6.9  \hspace{0.5in}  USL = 8.9 
-\end{equation}
-
-\end{center}
-
-Then we can depict the relationship between the confidence interval and the specification limits graphically (see Figure \ref{fig2}).
-\begin{figure}[h]\caption{Representation of a measurement and 95\% C.I. within specification limits}\label{fig2}
-\begin{center}
-\includegraphics[scale=0.5]{spec1}
-\end{center}
-\end{figure}
-
-This makes it obvious that the results indicate the product tested meets the specification criteria --- barely.  The 95\% confidence interval shown above is within the specification limits, but there is still a 5\% chance that the true value lies somewhere \textit{beyond} those limits.  In most cases this is an acceptable risk. In other circumstances where a failure could mean catastrophe or even loss of life, a higher degree of confidence is needed that results in a much wider interval.\\
-
-
-Calculating the 99\% confidence interval:\\
-
-
-The new value for $ t $  from a table of the Student’s $ t $ distribution: 9.925\\
-
-\begin{center}
-\begin{equation}
-\bar{x} \pm 9.925 \cdot \frac{0.40}{\sqrt{3}}  = 2.292 
-\end{equation}
-\end{center}
-
-The 99\% confidence interval is: $ 7.9 \pm \ 2.292 $\\
-
-
-\textit{This laboratory is 99\% confident that the true value is between 5.608 and 10.192.}\\
-
-This new interval in relation to the specification limits looks like that shown in Figure \ref{fig3}:
-
-\begin{figure}[h]\caption{Representation of a measurement and 99\% C.I. traversing specification limits}\label{fig3}
-\begin{center}
-\includegraphics[scale=0.5]{spec2}
-\end{center}
-\end{figure}
-
-Just as obvious as in the previous case, if this were a mission critical specification the test result clearly shows that the product does not meet the performance criteria.  Whenever a confidence interval traverses a specification limit, even if it is only one-sided, then one must conclude that the specification is not met.  Proper selection of the confidence level will provide the tolerable risk of having an incorrect conclusion.  
-\newpage
-\section{Exercises}
-\begin{enumerate}
-\item Describe a work environment from your past experiences in which data were collected, some analysis done, and results reported.  Specify how the data were reported, number of samples evaluated, calculations performed, etc.
-
-\item What is a \textit{confidence interval}?
-
-\item How does one find the correct value for $ t $ in a table of the Student's t distribution (see Appendix \ref{Appendix})?
-
-\item When reporting a result with 95\% confidence, what is the chance that this statement is wrong?
-\end{enumerate}
-
-\chapter{Hypothesis Testing}
-\section{Statistical Hypotheses}\index{mean}\index{standard deviation}\index{confidence}\index{hypothesis}
-In the previous chapters we discussed how to calculate the mean and standard deviation and to unequivocally state the value of a measurement (or series of measurements) at a desired confidence level.  Many technical problems involve the determination of whether to accept or reject a statement about some measured parameter.  For example, does the result given in the previous chapter help the technologist decide if it meets a specification limit?  In these circumstances a hypothesis is stated, and the decision making process about the hypothesis is called hypothesis testing.
-
-This is perhaps one of the most useful aspects of statistics (inferential statistics) since many types of technical problems involving decision making can be formulated in terms of a hypothesis statement. The hypothesis can be tested at a desired level of confidence to either accept or reject it based on numerical results.
-
-\section{Pass or Fail?}\index{variation}\index{location}\index{confidence}\index{hypothesis}
-As the lab technologist you have run multiple measurements, calculated the location and variation statistics, and calculated the desired confidence interval.  Does the sample pass or fail the manufacturing specification?  Hypothesis testing (sometimes also known as a significance test) is the tool of inferential statistics that will help you make an affirmative statement.
-
-\section{Types of data}
-In order to properly choose the proper ''tool'' we must first decide the kind of data that we have. There are two different types of data:
-\begin{enumerate}
-\item Attribute data: things that are counted as discrete events (e.g. defects, number of copier jams or mis-feeds, etc.)
-\item Continuous data: things that are measured on a continuous scale (e.g. \% moisture, thickness, mass, length, etc.)
-\end{enumerate}
-
-\subsection{Attribute Data}
-For this type of discrete data the tests and null hypotheses are given in Table \ref{tab1}:\\
-
-\index{null hypothesis}
-\begin{table}[h]\caption{Null Hypotheses for Discrete Data}\label{tab1}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline \textbf{Test} & \textbf{Null Hypothesis}, $H_{o}$  \\ 
-\hline 1 proportion & $\%Population =  ''Value'' $\\ 
-\hline 2 proportions & $\%Population_{1} = \%Population_{2}$ \\ 
-\hline 
-\end{tabular} 
-\end{center}
-\end{table}
-\subsection{Continuous data}
-Continuous data, also known as variable data, are evaluated using the tests and null hypotheses found in Table \ref{tab2}:
-\index{mean}\index{variance}\index{null hypothesis}
-\begin{table}[h]\caption{Null Hypotheses for Continuous Data}\label{tab2}
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline \textbf{Test} & \textbf{Null Hypothesis}, $H_{o}$ \\ 
-\hline 1-sample t-test & $\mu_{1} = value$ \\ 
-\hline 2-sample t-test (independent samples) & $\mu_{1} = \mu_{2}$ two population means are equal \\ 
-\hline paired t-test (dependent samples) & $\mu_{1} = \mu_{2}$ \\ 
-\hline 1 way ANOVA & $\mu_{1} = \mu_{2}$  \dots $= \mu_{k}$ \\ 
-\hline 1 variance, $\sigma^{2}$ &  $ \sigma =  value$ \\ 
-\hline 2 variance & $\sigma_{1} = \sigma_{2}$ \\ 
-\hline equal variances & $\sigma_{1} = \sigma_{2}$ \dots $= \sigma_{k}$  \\ 
-\hline normality & population \underline{is normal} \\ 
-\hline correlation (linear relationship only) & populations \underline{are not} correlated  \\ 
-\hline 
-\end{tabular} 
-\end{center}
-\end{table}
-
-\section{Six steps to hypothesis testing}\index{hypothesis}
-There are six steps to take in order to make the appropriate test for any particular situation:
-\index{null hypothesis}
-\begin{enumerate}
-\item Have an idea
-\item Translate the idea into statistical terms
-\item Choose the Test whose null hypothesis $ H_{o} $ either agrees with or contradicts the \textbf{idea}
-\item Sampling Step -- Determine the sample size and gather data
-\item Analyze: find the p-value 
-\item Decision: if p is low, reject $ H_{o} $
-\end{enumerate}
-
-\subsection{Have an idea}
-
-This is a basic first step to define what question you desire to answer.  The ''idea'' needs to be developed and stated such that a question can be appropriately answered.  For example, a cereal manufacturer wants to determine whether the box filling process is on target.  The target fill weight for (the population of) cereal boxes is 365 grams.
-
-One can state the ''idea'' for this situation as such: ''The average (mean) fill weight for cereal boxes is 365 grams.''
-\index{mean}\index{average}
-
-\subsection{Translate the idea into statistical terms}
-
-Now that the idea has been articulated, one can translate this into statistical terms.  In this example we can state the situation as such:
-
-\begin{center}
-\begin{equation}
-\mu = 365 g
-\end{equation}
-\end{center}
-
-
-\subsection{Choose the Test}
-\index{null hypothesis}\index{hypothesis}
-The next step in hypothesis testing is to choose the appropriate test.  The way to do this is very straight-forward:  choose the test whose null hypothesis, $H_{o}$, either agrees with or contradicts the IDEA.  From the section above, we stated the IDEA to be $ \mu = 365 g $, and this form of a null hypothesis, e.g. $ \mu = $ \textit{value} (where \textit{value} is given by the study) equates to the 1-sample t-test.  
-
-
-
-
-\subsection{Sampling Step}
-At this step in the process it is time to decide how many samples are to be taken, how they will be taken (or document how they already have been taken), and what measurements will need to be taken.  It is good practice to standardize routine tasks by developing a data record form, either paper or electronic, to facilitate and error-proof as much as possible the data collection process.  In many cases there is abundant historical data to sift through.  In some circumstances though, fresh observations need to be collected and this step may be the most laborious step.  If this is the case, the standardization of data entry mentioned above will serve this situation well.
-
-
-\subsection{Analyze}\index{mean}\index{standard deviation}
-Calculation of means and standard deviations are carried out in this step.  The real analysis takes place by means of determining the $p-value$ which can often be done by referring to a t-table in the appendix of a textbook (see also Appendix \ref{Appendix}). Finding the $p-value$ requires a ''backward'' use of the table -- finding the t-value in the table and then looking up the $p-value$ at the top of the appropriate column.  However, interpolation is most often required. Statistical software can be applied to give immediate and precise results at minimal effort.
-
-In our continuing example the test of $ \mu = 365 g $, we have the following result for a 1-sample t-test:\\
-
-
-\begin{center}
-\begin{tabular}{llllllll}
-\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std Dev} & \textbf{SE Mean} & \textbf{95\% CI} & \textbf{T} & \textbf{P} \\ \index{mean}
-Box Weight & 6 & 366.705 & 2.403 & 0.981 & (364.183, 369.226) & 1.74 & 0.143 \\ 
-\end{tabular} 
-\end{center}
-
-
-\subsection{Decision}\index{null hypothesis}
-Now it is time to interpret the results and render a decision.  To make a decision, one must choose the significance level, $\alpha$ (alpha) before doing the test.  In this case $\alpha = 0.05$ which is a common value used for many tests.  Different values can be chosen --- higher or lower --- depending on the sensitivity required for the test and the consequences of incorrectly rejecting the null hypothesis.  Yes, there is some risk here!  But the analyst can choose the level of risk that is reasonable and tolerable for the given situation.  In many cases, the $\alpha = 0.05$ significance level is quite appropriate.
-
-Therefore, based on $\alpha = 0.05$ one compares the $p-value$ to $\alpha$ -- and the decision is made as such: \textit{if P is low (less than or equal to $\alpha$), reject $H_{o}$.}
-
-\begin{center}
-\LARGE If P is low, reject $H_{o}$.
-\end{center}
-\index{confidence}\index{null hypothesis}
-So what if P is not low, as in the case above ($p = 0.143$)?  Then we ''fail to reject'' the null hypothesis - in other words ''we don't really know.''  Significance tests only provide evidence when refuting the null hypothesis.  In cases such as this when the null hypothesis cannot be rejected, ''we don't really know'' in the strictest statistical sense. So in this example, we cannot refute the hypothesis that  $ \mu = 365 g $ - however we cannot go so far to affirm that indeed  $ \mu = 365 g $, we simply cannot reject this hypothesis at the 95\% level of confidence.\\
-
-\subsection{Power}
-There is a possibility that the result of a statistical test such as this will not reject the null hypothesis when a real difference truly exists.  This is called a ''Type II error'' -- or ''False Negative.''  This \textit{possibility}, or more precisely this \textbf{probability} is $ \beta $, and thus
-
-\begin{center}
-\begin{equation}
-Power = 1 - \beta
-\end{equation} 
-\end{center}
- Therefore, \textbf{Power} is the probability of detecting a difference in between two populations \textit{when one truly exists}. In the case postulated above in which a Type II error is suspect, it is possible that the Power was insufficient.  To decrease the chance of a Type II error one must increase the statistical Power of the test.  Usually this is achieved by increasing $N$ (i.e. taking more samples).
-\index{confidence}
-\begin{table}[h]\caption{Significance test result matrix}
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline   Do Not Reject $H_{o}$  &  Do Not Reject $H_{o}$   \\
- $p = 1-\alpha = $ Confidence & $p = \beta = 1-Power$ \\
-  \textbf{GOOD} & \textbf{BAD} -- ''Type II error'' \\
-  & ''False Negative'' \\
-\hline Reject $H_{o}$ & Reject $H_{o}$ \\
- $ p = \alpha$ & $p= Power = f(\alpha, N, \sigma, d)$  \\
- \textbf{BAD} -- ''Type I error''    & \textbf{GOOD} \\
- ''False Positive''  &  \\
-\hline 
-\end{tabular} 
-\end{center}
-\end{table}
-\newpage
-\section{Exercises}
-
-\begin{enumerate}
-\item Are these samples the same or are they different?
-
-\begin{tabular}{|c|c|}
-\hline \textbf{Sample 1} & \textbf{Sample 2} \\ 
-\hline 14.59 & 14.62 \\ 
-\hline 15.01 & 14.69 \\ 
-\hline 15.47 & 14.95 \\ 
-\hline 15.56 & 14.76 \\ 
-\hline 15.05 & 14.87 \\ 
-\hline 
-
-\end{tabular}\\
-\index{confidence}
-\item Calculate $ \bar{x}, s, $ and 95\% confidence intervals for \textbf{Sample 1} and \textbf{Sample 2} from the table above.
-\item Plot the mean values using a line chart (\textbf{Sample 1}, \textbf{Sample 2}, and \textbf{Sample 3} from the table below) with 95\% confidence intervals as error bars.\index{mean}
-
-\begin{tabular}{|r|r|r|r|}
-\hline Obs. & \textbf{Sample 1} & \textbf{Sample 2} & \textbf{Sample 3} \\ 
-\hline 1 & 7.5 & 7.2 & 7.7 \\ 
-\hline 2 & 7.9 & 7.4 & 7.9 \\ 
-\hline 3 & 8.3 & 6.9 & 8.3 \\ 
-\hline 
-\end{tabular} 
  
-\end{enumerate}
-
