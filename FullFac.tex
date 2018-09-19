@@ -62,9 +62,11 @@ There are two cutting speeds that can be used and two bit sizes that are reasona
 \end{tabular} 
 \end{center}
 \end{table}
-The experimenter has chosen to run four replicates of this experiment.  Four circuit boards are tested at each run condition in the above table.  The response recorded is the vibration level that was achieved by attaching accelerometers to the board along the x, y, and z axes with the resultant vector recorded as the vibration level for that board.  Table \ref{tab3} summarizes the data collected:
-\begin{table}[h]\caption{Router Experiment Data Table}\label{tab3}
-\begin{center}\small
+The experimenter has chosen to run four replicates of this experiment.  Four circuit boards are tested at each run condition in the above table.  The response recorded is the vibration level that was achieved by attaching accelerometers to the board along the x, y, and z axes with the resultant vector recorded as the vibration level for that board.  Table \ref{tab3} summarizes the data collected.
+
+\renewcommand{\arraystretch}{1.7} %<- modify value to suit your needs
+\begin{sidewaystable}\caption{Router Experiment Data Table}\label{tab3}
+\begin{center}
 \begin{tabular}{|l|c|c|r|r|r|r|r|}
 \hline Run & Cutting Speed & Bit Size & 1 & 2 & 3 & 4 & Mean Response \\ 
 \hline 1 & 40 rpm & 1/16th in & 18.2 & 18.9 & 12.9 & 14.4 & 16.1\\ 
@@ -74,7 +76,8 @@ The experimenter has chosen to run four replicates of this experiment.  Four cir
 \hline 
 \end{tabular} 
 \end{center}
-\end{table}
+\end{sidewaystable}
+
 \subsection{Analysis of the response data}
 To analyze this data a simple implementation of Yate's algorithm can be applied in an analysis matrix as shown in Figure \ref{fig1}.
 \begin{figure}[h]\caption{2-Factor 2-Level Analysis Matrix}\label{fig1}
@@ -115,7 +118,7 @@ This plot greatly simplifies the interpretation of the results.  It becomes obvi
 
 
 \section{Replication}
-In the example factorial design given in the previous section each possible combination was replicated \textit{four times}. Had only one observation been made for each run and excessive variability exists in the process being studied, the estimates for each response may be far from the true average values. By referring back to section \ref{router} the raw data clearly exhibit variability. The effects of variability are reduced by replicating the experiment.  This practice yields at least four benefits:
+In the example factorial design given in the previous section each possible combination was replicated \textit{four times}. Had only one observation been made for each run and excessive variability exists in the process being studied, the estimates for each response may be far from the true average values. By referring back to table \ref{tab3}, on page \pageref{tab3} the raw data for the router experiment clearly exhibit variability. The effects of variation are reduced by replicating the experiment.  This practice yields at least four benefits:
 
 \begin{enumerate}
 \item mean values are less variable than individual observations -- the distribution of means is always narrower than the distribution of the corresponding individual measurements,
@@ -148,7 +151,8 @@ All possible combination of factors at each level are included in the full facto
 
 \subsection{EXAMPLE: Metal Cutting Process}
 A metal cutting process yields an unsatisfactory surface roughness that the process engineer desire to improve.  There are three factors that have been identified for this study: tool angle, depth of cut, and feed rate. Because there is concern to limit costs for this experiment only two replicates are budgeted for this study.  The design matrix with low and high levels for each factor is given in Table \ref{tab5}.
-\begin{table}[h]\caption{Metal Cutting Experiment Design}\label{tab5}
+
+\begin{sidewaystable}\caption{Metal Cutting Experiment Design}\label{tab5}
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
 \hline Run & \textbf{tool angle} & \textbf{depth of cut} & \textbf{feed rate}\\ 
@@ -163,7 +167,8 @@ A metal cutting process yields an unsatisfactory surface roughness that the proc
 \hline 
 \end{tabular} 
 \end{center}
-\end{table}
+\end{sidewaystable}
+
 The process engineer performed the 16 trials planned for this study and the results appear in Table \ref{tab6}.
 \begin{table}[h]\caption{Metal Cutting Experiment Data Table}\label{tab6}
 \begin{center}
