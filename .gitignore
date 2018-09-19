@@ -243,3 +243,7 @@ TSWLatexianTemp*
 
 # Ignore all files in the images/ directory
 images/
+
+# Specific files to ignore
+mybookind.tex
+colophon.tex
