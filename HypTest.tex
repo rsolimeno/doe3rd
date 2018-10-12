@@ -2,37 +2,42 @@
 \section{Statistical Hypotheses}\index{mean}\index{standard deviation}\index{confidence}\index{hypothesis}
 In the previous chapters we discussed how to calculate the mean and standard deviation and to unequivocally state the value of a measurement (or series of measurements) at a desired confidence level.  Many technical problems involve the determination of whether to accept or reject a statement about some measured parameter.  For example, does the result given in the previous chapter help the technologist decide if it meets a specification limit?  In these circumstances a hypothesis is stated, and the decision making process about the hypothesis is called hypothesis testing.
 
-This is perhaps one of the most useful aspects of statistics (inferential statistics) since many types of technical problems involving decision making can be formulated in terms of a hypothesis statement. The hypothesis can be tested at a desired level of confidence to either accept or reject it based on numerical results.
+This is perhaps one of the most useful aspects of inferential statistics since many types of technical problems involving decision making can be formulated in terms of a hypothesis statement. The hypothesis can be tested at a desired level of confidence to either accept or reject it based on numerical results.
 
 \section{Pass or Fail?}\index{variation}\index{location}\index{confidence}\index{hypothesis}
-As the lab technologist you have run multiple measurements, calculated the location and variation statistics, and calculated the desired confidence interval.  Does the sample pass or fail the manufacturing specification?  Hypothesis testing (sometimes also known as a significance test) is the tool of inferential statistics that will help you make an affirmative statement.
+As the lab technologist you have run multiple measurements, calculated the location and variation statistics, and determined the desired confidence interval.  Does the sample pass or fail the manufacturing specification?  Hypothesis testing (sometimes also known as a significance test) is the tool of inferential statistics that will help you make an affirmative statement.
 
 \section{Types of data}
-In order to properly choose the proper ''tool'' we must first decide the kind of data that we have. There are two different types of data:
+In order to properly choose the proper ``tool'' we must first decide the kind of data that we have. There are two different types of data:
 \begin{enumerate}
-\item Attribute data: things that are counted as discrete events (e.g. defects, number of copier jams or mis-feeds, etc.)
-\item Continuous data: things that are measured on a continuous scale (e.g. \% moisture, thickness, mass, length, etc.)
+\item Attribute data: things that are \textit{counted} as discrete events (e.g. defects, number of copier jams or mis\-feeds, etc.)
+\item Continuous data: things that are measured on a continuously variable scale (e.g. \% moisture, thickness, mass, length, etc.)
 \end{enumerate}
 
-\subsection{Attribute Data}
-For this type of discrete data the tests and null hypotheses are given in Table \ref{tab1}:\\
+
 
 \index{null hypothesis}
-\begin{table}[h]\caption{Null Hypotheses for Discrete Data}\label{tab1}
+\begin{table}\caption{Null Hypotheses for Discrete Data}\label{NullHypDisc}
 \begin{center}
+	{\renewcommand{\arraystretch}{1.8} %<- modify value to suit your needs
 \begin{tabular}{|c|c|}
 \hline \textbf{Test} & \textbf{Null Hypothesis}, $H_{o}$  \\ 
 \hline 1 proportion & $\%Population =  ''Value'' $\\ 
 \hline 2 proportions & $\%Population_{1} = \%Population_{2}$ \\ 
 \hline 
-\end{tabular} 
+\end{tabular} }
 \end{center}
 \end{table}
-\subsection{Continuous data}
-Continuous data, also known as variable data, are evaluated using the tests and null hypotheses found in Table \ref{tab2}:
+
+\subsection{Attribute Data}
+As noted earlier, attribute data is that which is \textit{counted}. It is simpler to gather since it can be binary (yes/no or pass/fail). Attribute data has less resolution, since we only count if something occurs, rather than taking a measurement to determine the value of a continuously variable parameter. For example, attribute data for a manufacturing process might include the number of product defects (such as dents, or perhaps paint blemishes), whereas variable data for the same process might be the measurement of a critical product dimension, such as width or diameter.
+
+Thus, attributes generally provide less information than measurement (variable) data would for the same process. Thus for attributes data, it is not readily predictable if the process is trending towards an undesirable state, since it is already in a discrete (pass/fail) condition. For this type of data the tests and null hypotheses are given in Table \ref{NullHypDisc}.\\
+
 \index{mean}\index{variance}\index{null hypothesis}
-\begin{sidewaystable}[h]\caption{Null Hypotheses for Continuous Data}\label{tab2}
+\begin{sidewaystable}\caption{Null Hypotheses for Continuous Data}\label{NullHypCont}
 \begin{center}
+	{\renewcommand{\arraystretch}{1.8} %<- modify value to suit your needs
 \begin{tabular}{|l|l|}
 \hline \textbf{Test} & \textbf{Null Hypothesis}, $H_{o}$ \\ 
 \hline 1-sample t-test & $\mu_{1} = value$ \\ 
@@ -45,9 +50,13 @@ Continuous data, also known as variable data, are evaluated using the tests and 
 \hline normality & population \underline{is normal} \\ 
 \hline correlation (linear relationship only) & populations \underline{are not} correlated  \\ 
 \hline 
-\end{tabular} 
+\end{tabular} }
 \end{center}
 \end{sidewaystable}
+
+\subsection{Variable data}
+Variables data is acquired through continuously ``variable'' measurements, such as length, width, height, time, diameter, strength, weight, density, thickness, pressure, and temperature. It is quantitative. The degree of accuracy can be controlled by the appropriate choice of measuring device. For example, dimensions of length or diameter can be measured to the nearest 1/8th inch, millimeter, or micron depending on the measuring tool chosen. Variable data, also known as continuous data, are evaluated using the tests and null hypotheses found in Table \ref{NullHypCont}.
+
 
 \section{Six steps to hypothesis testing}\index{hypothesis}
 There are six steps to take in order to make the appropriate test for any particular situation:
@@ -63,9 +72,9 @@ There are six steps to take in order to make the appropriate test for any partic
 
 \subsection{Have an idea}
 
-This is a basic first step to define what question you desire to answer.  The ''idea'' needs to be developed and stated such that a question can be appropriately answered.  For example, a cereal manufacturer wants to determine whether the box filling process is on target.  The target fill weight for (the population of) cereal boxes is 365 grams.
+This is a basic first step to define what question you desire to answer.  The ``idea'' needs to be developed and stated such that a question can be appropriately answered.  For example, a cereal manufacturer wants to determine whether the box filling process is on target.  The target fill weight for (the population of) cereal boxes is 365 grams.
 
-One can state the ''idea'' for this situation as such: ''The average (mean) fill weight for cereal boxes is 365 grams.''
+One can state the ``idea'' for this situation as such: ``The average (mean) fill weight for cereal boxes is 365 grams.''
 \index{mean}\index{average}
 
 \subsection{Translate the idea into statistical terms}
@@ -87,21 +96,26 @@ The next step in hypothesis testing is to choose the appropriate test.  The way 
 At this step in the process it is time to decide how many samples are to be taken, how they will be taken (or document how they already have been taken), and what measurements will need to be taken.  It is good practice to standardize routine tasks by developing a data record form, either paper or electronic, to facilitate and error-proof as much as possible the data collection process.  In many cases there is abundant historical data to sift through.  In some circumstances though, fresh observations need to be collected and this step may be the most laborious step.  If this is the case, the standardization of data entry mentioned above will serve this situation well.
 
 \subsection{Analyze}\index{mean}\index{standard deviation}
-Calculation of means and standard deviations are carried out in this step.  The real analysis takes place by means of determining the $p-value$ which can often be done by referring to a t-table in the appendix of a textbook (see also Appendix \ref{Appendix}). Finding the $p-value$ requires a ''backward'' use of the table -- finding the t-value in the table and then looking up the $p-value$ at the top of the appropriate column.  However, interpolation is most often required. Statistical software can be applied to give immediate and precise results at minimal effort.
+Calculation of means and standard deviations are carried out in this step.  The real analysis takes place by means of determining the $p-value$ which can often be done by referring to a t-table in the appendix of a textbook (see also Appendix \ref{AppendixA}). Finding the $p-value$ requires a ''backward'' use of the table -- finding the t-value in the table and then looking up the $p-value$ at the top of the appropriate column.  However, interpolation is most often required. Statistical software can be applied to give immediate and precise results at minimal effort.
 
-\begin{sidewaystable}
+\begin{table}
 	\begin{center}
-\begin{tabular}{llllllll}
-\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std Dev} & \textbf{SE Mean} & \textbf{95\% CI} & \textbf{T} & \textbf{P} \\ \index{mean}
-Box Weight & 6 & 366.705 & 2.403 & 0.981 & (364.183, 369.226) & 1.74 & 0.143 \\ 
-\end{tabular} 
+		{\scriptsize 
+			\begin{tabular}{llllllll}
+			\toprule
+			\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{Std Dev} & \textbf{SE Mean} & \textbf{95\% CI} & \textbf{T} & \textbf{P} \\
+			\midrule
+			Box Weight & 6 & 366.705 & 2.403 & 0.981 & (364.183, 369.226) & 1.74 & 0.143 \\ 
+%			\bottomrule
+			\end{tabular} 
+		}
 \end{center}
-	\caption{1-sample t-test result for an example, the test of $ \mu = 365 g $ }
-\end{sidewaystable}
+	\caption{1-sample t-test result for an example, the test of $ \mu = 365 g $ }\label{1samplet} \index{mean}
+\end{table}
 
 
 \subsection{Decision}\index{null hypothesis}
-Now it is time to interpret the results and render a decision.  To make a decision, one must choose the significance level, $\alpha$ (alpha) before doing the test.  In this case $\alpha = 0.05$ which is a common value used for many tests.  Different values can be chosen --- higher or lower --- depending on the sensitivity required for the test and the consequences of incorrectly rejecting the null hypothesis.  Yes, there is some risk here!  But the analyst can choose the level of risk that is reasonable and tolerable for the given situation.  In many cases, the $\alpha = 0.05$ significance level is quite appropriate.
+Now it is time to interpret the results and render a decision.  To decide, one must choose the significance level, $\alpha$ (alpha) before doing the test.  In this case $\alpha = 0.05$ which is a common value used for many tests.  Different values can be chosen -- higher or lower -- depending on the sensitivity required for the test and the consequences of incorrectly rejecting the null hypothesis.  Yes, there is some risk here!  But the analyst can choose the level of risk that is reasonable and tolerable for the given situation.  In many cases, the $\alpha = 0.05$ significance level is quite appropriate.
 
 Therefore, based on $\alpha = 0.05$ one compares the $p-value$ to $\alpha$ -- and the decision is made as such: \textit{if P is low (less than or equal to $\alpha$), reject $H_{o}$.}
 
@@ -109,20 +123,21 @@ Therefore, based on $\alpha = 0.05$ one compares the $p-value$ to $\alpha$ -- an
 \LARGE If P is low, reject $H_{o}$.
 \end{center}
 \index{confidence}\index{null hypothesis}
-So what if P is not low, as in the case above ($p = 0.143$)?  Then we ''fail to reject'' the null hypothesis - in other words ''we don't really know.''  Significance tests only provide evidence when refuting the null hypothesis.  In cases such as this when the null hypothesis cannot be rejected, ''we don't really know'' in the strictest statistical sense. So in this example, we cannot refute the hypothesis that  $ \mu = 365 g $ - however we cannot go so far to affirm that indeed  $ \mu = 365 g $, we simply cannot reject this hypothesis at the 95\% level of confidence.\\
+So what if P is not low, as in the case above ($p = 0.143$)?  Then we ``fail to reject'' the null hypothesis - in other words ``we don't really know.''  Significance tests only provide evidence when refuting the null hypothesis.  In cases such as this when the null hypothesis cannot be rejected, ``we don't really know'' in the strictest statistical sense. So in this example, we cannot refute the hypothesis that  $ \mu = 365 g $ - however we can't go so far to affirm that indeed  $ \mu = 365 g $, we simply cannot reject this hypothesis at the 95\% level of confidence.\\
 
 \subsection{Power}
-There is a possibility that the result of a statistical test such as this will not reject the null hypothesis when a real difference truly exists.  This is called a ''Type II error'' -- or ''False Negative.''  This \textit{possibility}, or more precisely this \textbf{probability} is $ \beta $, and thus
+There is a possibility that the result of a statistical test such as this will not reject the null hypothesis when a real difference truly exists.  This is called a ``Type II error'' -- or ''False Negative.''  This \textit{possibility}, or more precisely this \textbf{probability} is $ \beta $, and thus
 
 \begin{center}
 \begin{equation}
 Power = 1 - \beta
 \end{equation} 
 \end{center}
- Therefore, \textbf{Power} is the probability of detecting a difference in between two populations \textit{when one truly exists}. In the case postulated above in which a Type II error is suspect, it is possible that the Power was insufficient.  To decrease the chance of a Type II error one must increase the statistical Power of the test.  Usually this is achieved by increasing $N$ (i.e. taking more samples).
+ Therefore, \textbf{Power} is the probability of detecting a difference in between two populations \textit{when one truly exists}. Bigger effects are easier to detect, obviously. In the case postulated above in which a Type II error is suspect, it is possible that the Power was insufficient to discern a real, but perhaps smallish effect.  To decrease the chance of a Type II error one must increase the statistical Power of the test.  Usually this is achieved by increasing $N$ (i.e. taking more samples).
 \index{confidence}
-\begin{table}[h]\caption{Significance test result matrix}
+\begin{table}[h]\caption{Significance test result matrix}\label{SigTest}
 \begin{center}
+		{\renewcommand{\arraystretch}{1.8} %<- modify value to suit your needs
 \begin{tabular}{|l|l|}
 \hline   Do Not Reject $H_{o}$  &  Do Not Reject $H_{o}$   \\
  $p = 1-\alpha = $ Confidence & $p = \beta = 1-Power$ \\
@@ -133,9 +148,56 @@ Power = 1 - \beta
  \textbf{BAD} -- ''Type I error''    & \textbf{GOOD} \\
  ''False Positive''  &  \\
 \hline 
-\end{tabular} 
+\end{tabular} }
 \end{center}
 \end{table}
+
+\section{Using R statistical software}
+R is a free software environment for statistical computing and graphics.\cite{Venables2012}\cite{Mohr2018} R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS. The software provides a wide variety of statistical and graphical techniques. When paired with RStudio, an integrated development environment (IDE), development of code to analyze a wide variety of statistical analyses is made easy.
+
+The RStudio IDE provides a command console to execute individual R commands, just like a native R session. In addition, the IDE provides an editor that offers syntax highlighting, code completion, and smart indentation. The R code entered into the editor can also be executed directly from the source editor. Interested readers can see more information about RStudio and download a free version at \url{https://www.rstudio.com/products/RStudio/}.
+
+To demonstrate using R, let's compute statistical power -- discussed in the previous section.  Assuming we have a ``medium-sized'' effect where a 0.5 unit shift can be detected. We want our significance level to be $\alpha = 0.05$ and we have resources to test 50 samples of each population for comparison. Computing power in R would require the \emph{pwr} package which should already be loaded, and then the following code would produce:
+
+\begin{lstlisting}
+> #Example of an analysis to find the power to detect a medium sized effect give 50 samples per cell (100 samples total)
+  
+> pwr.t.test(n = 50, d = .5, sig.level = .05, power = NULL, alternative = "two.sided", type = "two.sample")
+\end{lstlisting}
+
+\noindent\textbf{Output:}\\
+\texttt{Two-sample t test power calculation }
+
+\noindent\texttt{n = 50
+d = 0.5
+sig.level = 0.05
+power = 0.6968934
+alternative = two.sided}
+
+\noindent\texttt{NOTE: n is number in *each* group}\\
+
+
+The ``NULL'' value assigned to power in the code example tells the software to compute that parameter. Any of the first four parameters (n, d, $\alpha$, power) can be computed by setting to NULL and providing the other three. The hypothesis test for the two samples of n=50 would give power of about 70\% at the 5\% significance level (i.e. 95\% confidence).
+
+How many samples would be required to have 90\% power?
+
+\begin{lstlisting}
+> pwr.t.test(n = NULL, d = .5, sig.level = .05, power = .9, alternative = "two.sided", type = "two.sample")
+\end{lstlisting}
+
+\noindent\textbf{Output:}\\
+\texttt{Two-sample t test power calculation} 
+
+\noindent\texttt{n = 85.03128
+d = 0.5
+sig.level = 0.05
+power = 0.9
+alternative = two.sided}
+
+\noindent\texttt{NOTE: n is number in *each* group}\\
+
+
+The answer: 85 samples must be measured to achieve a power of 90\% - almost double the number of samples required at 70\% power.
 \newpage
 \section{Exercises}
 
