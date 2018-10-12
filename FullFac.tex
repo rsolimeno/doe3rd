@@ -7,7 +7,7 @@ We do experiments to test a hypothesis -- something we think might be true but h
 To ''improve the quality'' means:
 
 \begin{itemize}
-\item Optimizing the mean value of response(s) -- a traditional focus of experimental designs.  For example, maximize yield of a chemical reaction, maximizing the opacity of printing paper, or maximizing the distance a catapult launches a projectile. In each of these examples there are various settings involved in making the process work that may be adjusted to different levels or settings.  Adjustment of these settings in relation to each other to achieve the desired end result is the object of the experiment.
+\item Optimizing the mean value of response(s) -- a traditional focus of experimental designs.  For example, maximize yield of a chemical reaction, optimizing the opacity of printing paper, or maximizing the distance a catapult launches a projectile. In each of these examples there are various settings involved in making the process work that may be adjusted to different levels or settings.  Adjustment of these parameters in relation to each other can achieve the desired end result -- and is the object of the experiment.
 
 \item Minimizing variation in a process or product -- variation and quality of performance are inversely related. There is always some variation present in any process, i.e. random variation that is uncontrollable, and the role of experimentation in reducing variation is to identify and reduce those sources of variation that are not random and are controllable.
 \end{itemize}
@@ -34,9 +34,9 @@ For experiments with many factors this can lead to a large number of runs, or te
 \begin{tabular}{|l|c|c|}
 \hline Run & A & B \\ 
 \hline 1 & -- & -- \\ 
-\hline 2 & -- & + \\ 
-\hline 3 & + & -- \\ 
-\hline 4 & + & + \\ 
+\hline 2 & -- & \cellcolor{black!25}+ \\ 
+\hline 3 & \cellcolor{black!25}+ & -- \\ 
+\hline 4 & \cellcolor{black!25}+ & \cellcolor{black!25}+ \\ 
 \hline 
 \end{tabular} 
 \end{center}
@@ -49,61 +49,48 @@ In Table \ref{tab1}, the ''--'' denotes a low level of the corresponding factor 
 \label{router}
 A router is a power tool that is used in woodworking (large routers), finishing laminate counter tops (hand-held laminate routers), and small routers are used to cut locating notches on printed circuit boards for electronic devices. In this example the latter device is considered.  The vibration level of the circuit board while being cut is an important parameter that affects product quality.  Two factors are presumed to have an influence on vibration: the cutting speed (Factor A), and the bit size (Factor B).
 
-There are two cutting speeds that can be used and two bit sizes that are reasonable.  Therefore there are four possible combinations as depicted in Table \ref{tab2}:
-\begin{table}[h]\caption{Router Experiment Design}\label{tab2}
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline Run & Cutting Speed & Bit Size \\ 
-\hline 1 & 40 rpm & 1/16th in \\ 
-\hline 2 & 90 rpm & 1/16th in \\ 
-\hline 3 & 40 rpm & 1/8th in \\ 
-\hline 4 & 90 rpm & 1/8th in \\ 
-\hline 
-\end{tabular} 
-\end{center}
-\end{table}
-The experimenter has chosen to run four replicates of this experiment.  Four circuit boards are tested at each run condition in the above table.  The response recorded is the vibration level that was achieved by attaching accelerometers to the board along the x, y, and z axes with the resultant vector recorded as the vibration level for that board.  Table \ref{tab3} summarizes the data collected.
+There are two cutting speeds that can be used and two bit sizes that are reasonable.  Therefore there are four possible combinations as depicted in Table \ref{RoutDes}:
+
+\input{RoutDesgn}
+
+The experimenter has chosen to run four replicates of this experiment.  Four circuit boards are tested at each run condition in the above table.  The response recorded is the vibration level that was achieved by attaching accelerometers to the board along the x, y, and z axes with the resultant vector recorded as the vibration level for that board.  Table \ref{RouterData} summarizes the data collected.
 
 \renewcommand{\arraystretch}{1.7} %<- modify value to suit your needs
-\begin{sidewaystable}\caption{Router Experiment Data Table}\label{tab3}
-\begin{center}
-\begin{tabular}{|l|c|c|r|r|r|r|r|}
-\hline Run & Cutting Speed & Bit Size & 1 & 2 & 3 & 4 & Mean Response \\ 
-\hline 1 & 40 rpm & 1/16th in & 18.2 & 18.9 & 12.9 & 14.4 & 16.1\\ 
-\hline 2 & 90 rpm & 1/16th in & 27.2 & 24.0 & 22.4 & 22.5 & 24.0\\ 
-\hline 3 & 40 rpm & 1/8th in & 15.9 & 14.5 & 15.1 & 14.2 & 14.9\\ 
-\hline 4 & 90 rpm & 1/8th in & 41.0 & 43.9 & 36.3 & 39.9 & 40.3\\ 
-\hline 
-\end{tabular} 
+\begin{table}[]
+	\begin{center}
+	\begin{tabular}{lcc|r|r|r|r|r}
+		\cline{4-7}
+		& \multicolumn{1}{l}{}                                                                   & \multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Replicates}}                                                                                              & \multicolumn{1}{l}{}                                                                   \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Run Order}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Cutting \\ Speed\end{tabular}}} & \textbf{Bit Size}     & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{\textbf{2}} & \multicolumn{1}{c|}{\textbf{3}} & \multicolumn{1}{c|}{\textbf{4}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Mean \\ Response\end{tabular}}} \\ \hline
+		\multicolumn{1}{|l|}{1}            & \multicolumn{1}{c|}{40 rpm}                                                            & 1/8th in              & 18.2                            & 18.9                            & 12.9                            & 14.4                            & \multicolumn{1}{r|}{16.1}                                                              \\ \hline
+		\multicolumn{1}{|l|}{2}            & \multicolumn{1}{c|}{90 rpm}                                                            & 1/8th in              & 27.2                            & 24.0                            & 22.4                            & 22.5                            & \multicolumn{1}{r|}{24.0}                                                              \\ \hline
+		\multicolumn{1}{|l|}{3}            & \multicolumn{1}{c|}{40 rpm}                                                            & 1/16th in             & 15.9                            & 14.5                            & 15.1                            & 14.2                            & \multicolumn{1}{r|}{14.9}                                                              \\ \hline
+		\multicolumn{1}{|l|}{4}            & \multicolumn{1}{c|}{90 rpm}                                                            & 1/16th in             & 41.0                            & 43.9                            & 36.3                            & 39.9                            & \multicolumn{1}{r|}{40.3}                                                              \\ \hline
+	\end{tabular}\caption{Router Experiment Data Table}\label{RouterData}
 \end{center}
-\end{sidewaystable}
+\end{table}
+
+
 
 \subsection{Analysis of the response data}
-To analyze this data a simple implementation of Yate's algorithm can be applied in an analysis matrix as shown in Figure \ref{fig1}.
-\begin{figure}[h]\caption{2-Factor 2-Level Analysis Matrix}\label{fig1}
-\begin{center}
-\includegraphics[scale=0.75]{2x2Resp}
-\end{center}
-\end{figure}
-While the experimental runs are actually carried out in a randomized order, the analysis requires that the data be input as standard order as shown in Figure \ref{fig1}. For each run, enter the mean value of the response adjacent to each standard run number.  The sum of the mean response values is then calculated and entered in the cell just below the last mean response.  Below that is entered the total number of values (in this example the total is 4). The final entry in this column is calculated by dividing the mean sum by the total number of values to obtain an overall average response.
+To analyze this data a simple implementation of Yate's algorithm can be applied in an analysis matrix as shown in Table \ref{2fac2lev_matrix}.
+
+\input{2Fac2Lev_Matrix}
+
+While the experimental runs are actually carried out in a randomized order, the analysis requires that the data be input as standard order as shown in Table \ref{2fac2lev_matrix}. For each run, enter the mean value of the response adjacent to each standard run number.  Note that the experimental data in Table \ref{RouterData} is listed in \textit{run order}. Run \#1 corresponds to standard order 2, run \#2 to standard order 4, etc. The sum of the mean response values is then calculated and entered in the cell just below the last mean response.  Below that is entered the total number of values N (in this example the total is 4). The final entry in this column is calculated by dividing the mean sum by the total number of values to obtain an overall average response.
 
 In the subsequent columns under each main effect and interaction effect, simply copy the mean response for each run (row) across in the cells that are \textit{not shaded}.  Leave the shaded cells vacant in all cases. Again total a sum for each column and a total number of values, only counting cells that have values entered.  The total number of values should be half of what was entered in the first column.  Calculate mean responses for each column using the values in each respective column.
 
-The final step is to calculate the net effect.  In each case, subtract the value of the high level response from the low level response.  The result may be either a positive or negative value depending upon the relative magnitude of the high and low level responses.  Enter the net effect in the  bottom row of the matrix.  The completed analysis matrix for \textit{The Router Experiment}, in Figure \ref{fig2}, provides an example of how to correctly complete this process.
-\begin{figure}[h]\caption{Router Experiment Analysis Matrix}\label{fig2}
-\begin{center}
-\includegraphics[scale=0.75]{router}
-\end{center}
-\end{figure}
-So what is mean by an ''effect'' of a factor (main or interaction)?  An effect is simply the change in the mean value of the response, $y$, when the factor of interest is changed from its low level to its high level.  The effects for each main and interaction factor are calculated by taking the difference of the average high and average low levels of a factor. By completing the table above, we accomplished this in an organized way. Once the calculations are complete, it is helpful to visualize the results by depicting them graphically in two dimensions plotting the low and high levels of factor A versus factor B as in Figure \ref{fig3}.
+The final step is to calculate the net effect.  In each case, subtract the value of the high level (+) response from the low level (-) response.  The result may be either a positive or negative value depending upon the relative magnitude of the high and low level responses.  Enter the net effect in the  bottom row of the matrix.  The completed analysis matrix for \textit{The Router Experiment}, in Table \ref{Filled_2fac2lev}, provides an example of how to correctly complete this process.
 
-\begin{figure}[h]\caption{Router Experiment Design Space}\label{fig3}
-\begin{center}
-\includegraphics[scale=0.5]{router-eff}
-\end{center}
-\end{figure}
+\input{Filled2x2Fac}
 
-\label{2facspace}
+
+So what is mean by an ``effect'' of a factor (main or interaction)?  An effect is simply the change in the mean value of the response, $y$, when the factor of interest is changed from its low level to its high level.  The effects for each main and interaction factor are calculated by taking the difference of the average high and average low levels of a factor. By completing the table above, we accomplished this in an organized way. Once the calculations are complete, it is helpful to visualize the results by depicting them graphically in two dimensions plotting the low and high levels of factor A versus factor B as in Figure \ref{X}.
+
+INSERT FIGURE X HERE\label{2facspace}
+
+
 The experimental ''design space'' for a two-factor, two-level factorial design is a square.  As you will see in  section \ref{DesignSpace} higher order factorial designs have higher dimensional design spaces.
 
 \subsection{Evaluation of interaction effect}
@@ -136,13 +123,13 @@ Three-factor factorial designs are two-level experiments denoted as $ 2^{3} $ de
 \begin{tabular}{|l|c|c|c|}
 \hline Run & A & B & C\\ 
 \hline 1 & -- & -- & --\\ 
-\hline 2 & -- & -- & +\\ 
-\hline 3 & -- & + & --\\ 
-\hline 4 & -- & + & +\\
-\hline 5 & + & -- & --\\
-\hline 6 & + & -- & +\\
-\hline 7 & + & + & --\\
-\hline 8 & + & + & +\\ 
+\hline 2 & -- & -- & \cellcolor{black!95}+\\ 
+\hline 3 & -- & \cellcolor{black!95}+ & --\\ 
+\hline 4 & -- & \cellcolor{black!95}+ & \cellcolor{black!95}+\\
+\hline 5 & \cellcolor{black!95}+ & -- & --\\
+\hline 6 & \cellcolor{black!95}+ & -- & \cellcolor{black!95}+\\
+\hline 7 & \cellcolor{black!95}+ & \cellcolor{black!95}+ & --\\
+\hline 8 & \cellcolor{black!95}+ & \cellcolor{black!95}+ & \cellcolor{black!95}+\\ 
 \hline 
 \end{tabular} 
 \end{center}
