@@ -1,6 +1,7 @@
 \documentclass[12pt, openright, twoside]{book}
 
 % <<<<<PACKAGES>>>>>
+\usepackage[table]{xcolor}		% to shade cells in a table http://ctan.org/pkg/xcolor
 \usepackage[utf8]{inputenc}
 \usepackage{calc} % to perform arithmetic on the arguments of the LATEX commands \setcounter, \addtocounter, \setlength, and \addtolength
 
@@ -36,6 +37,15 @@
 
 \usepackage{dtk-logos}			% package for latex logos
 \usepackage{rotating}			% package for rotating tables and figures
+\usepackage{listings}			% package for allowing wrapping lines of verbatim text
+\lstset{language=R,
+	literate={<-}{{$\gets$}}1,
+	breaklines=true,
+	linewidth=\linewidth,
+	basicstyle=\footnotesize,
+	showspaces=false,
+	showstringspaces=false}
+
 
 %define page size and margins etc. 
 \usepackage[paperwidth=6in, paperheight=9in]{geometry} 
@@ -57,6 +67,7 @@
 \usepackage{balance}			% to balance placement of floats for optimum output
 \usepackage{booktabs}			% to enhance the quality of tables
 \usepackage[all]{nowidow}		% to minimize orphans/widows on page breaks
+
 
 
 \floatstyle{ruled} 
