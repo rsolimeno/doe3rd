@@ -1,7 +1,7 @@
 \chapter{Putting the basics to work}
 
 \section{A typical work environment}
-In a normal work environment, such as a biology, chemistry, or quality assurance lab most technicians already use some of the statistics covered in this text.  Taking a number of measurements, conveniently set to 3 or maybe 5 samples is the standard practice.  Reporting the mean value of a test result is already the norm.  Engineers also often collect data in the form of an observational study, or observational data are obtained through the analysis of historical data.
+In a normal work environment, such as a biology, chemistry, or quality assurance lab most technicians already use some of the statistics covered in this text.  Taking a number of measurements, conveniently set to 3 or maybe 5 samples is the standard practice.  Reporting the mean value of a test result is already the norm.  Engineers also often collect data in the form of an observational study, or observed data are obtained through the analysis of historical observations.
 \index{mean}\index{average}
 Here's a synopsis of the typical situation:
 \begin{center}
@@ -14,7 +14,7 @@ Here's a synopsis of the typical situation:
   \end{itemize}
 \end{center}  
   
-Are both location and variation statistics considered here?  How does one actually decide whether the sample will ''pass'' or ''fail?''  If the (average) result just barely traverses a specification limit, does the production manager look at the raw data and seek one or more ''outliers?''  If the result is undesirable, is the test run again?\index{variation}\index{location}\index{average}
+Are both location and variation statistics considered here?  How does one actually decide whether the sample will ``pass'' or ``fail?''  If the (average) result just barely traverses a specification limit, does the production manager look at the raw data and seek one or more ``outliers?''  If the result is undesirable, does the analyst run the test again?\index{variation}\index{location}\index{average}
   
 \section{Evaluating the quality of a process}
 \index{variation}\index{location}\index{confidence}\index{t Distribution}
@@ -62,8 +62,8 @@ LSL = 6.9  \hspace{0.5in}  USL = 8.9
 
 \end{center}
 
-Then we can depict the relationship between the confidence interval and the specification limits graphically (see Figure \ref{fig2}).
-\begin{figure}[h]\caption{Representation of a measurement and 95\% C.I. within specification limits}\label{fig2}
+Then we can depict the relationship between the confidence interval and the specification limits graphically (see Figure \ref{ConfInt}).
+\begin{figure}[h]\caption{Representation of a measurement and 95\% C.I. within specification limits}\label{ConfInt}
 \begin{center}
 \includegraphics[scale=0.5]{spec1}
 \end{center}
@@ -88,9 +88,9 @@ The 99\% confidence interval is: $ 7.9 \pm \ 2.292 $\\
 
 \textit{This laboratory is 99\% confident that the true value is between 5.608 and 10.192.}\\
 
-This new interval in relation to the specification limits looks like that shown in Figure \ref{fig3}:
+This new interval in relation to the specification limits looks like that shown in Figure \ref{SpecLim}:
 
-\begin{figure}[h]\caption{Representation of a measurement and 99\% C.I. traversing specification limits}\label{fig3}
+\begin{figure}[h]\caption{Representation of a measurement and 99\% C.I. traversing specification limits}\label{SpecLim}
 \begin{center}
 \includegraphics[scale=0.5]{spec2}
 \end{center}
@@ -104,7 +104,7 @@ Just as obvious as in the previous case, if this were a mission critical specifi
 
 \item What is a \textit{confidence interval}?
 
-\item How does one find the correct value for $ t $ in a table of the Student's t distribution (see Appendix \ref{Appendix})?
+\item How does one find the correct value for $ t $ in a table of the Student's t distribution (see Appendix \ref{AppendixA})?
 
 \item When reporting a result with 95\% confidence, what is the chance that this statement is wrong?
 \end{enumerate}
