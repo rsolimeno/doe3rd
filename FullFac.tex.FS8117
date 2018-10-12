@@ -1,0 +1,255 @@
+% Full Factorial Designs
+\chapter{Full Factorial Designs}
+
+\section{Learning by experimentation}
+We do experiments to test a hypothesis -- something we think might be true but have no evidence to demonstrate the idea.  The process of experimentation is a \textit{learning} process.  The experiments that this course offers for study are those that are intended to improve the quality of product designs and production (or measurement) processes.
+
+To ''improve the quality'' means:
+
+\begin{itemize}
+\item Optimizing the mean value of response(s) -- a traditional focus of experimental designs.  For example, maximize yield of a chemical reaction, optimizing the opacity of printing paper, or maximizing the distance a catapult launches a projectile. In each of these examples there are various settings involved in making the process work that may be adjusted to different levels or settings.  Adjustment of these parameters in relation to each other can achieve the desired end result -- and is the object of the experiment.
+
+\item Minimizing variation in a process or product -- variation and quality of performance are inversely related. There is always some variation present in any process, i.e. random variation that is uncontrollable, and the role of experimentation in reducing variation is to identify and reduce those sources of variation that are not random and are controllable.
+\end{itemize}
+
+The definition of an experiment used here is a series of trials or tests that produce quantifiable outcomes. While the criterion for quantifiable outcomes is established, the initial data need not be numerical results. Pass/fail results, or categorical results established with Excellent/Good/Fair/Poor judgements can be converted to numerical results by assigning values to each category.
+
+\section{Traditional methods}
+Some scientists or engineers with many years of experience might say, "I know how to test products - just vary one thing at a time and keep everything else constant so you can see the effect of what you are changing."  While one variable at a time experiments have an intuitive appeal and seem quite straight-forward to plan and do, they are not good experiment designs.  These types of experiments generally:
+
+\begin{enumerate}
+\item lead to misleading conclusions,
+\item cannot reveal any possible interaction effects,
+\item may not result in determining the true optimum conditions, and
+\item are usually inefficient.
+\end{enumerate}
+
+There is a better way.  Factorial experiments are those in which every level of one factor is run in combination with all levels of the other factors.  Thus all possible combinations are run in a factorial design experiment. It should be understood that the factors being studied in these types of experiments are \textit{independent variables}.  These are usually process settings such as temperature, line speed, tool size, material substitution, etc.  
+
+For experiments with many factors this can lead to a large number of runs, or tests.  There are several ways of dealing with these situations to reduce the number of runs in the factorial experiment while preserving all of the useful information. These methods are dealt with in the next chapter.
+
+\section{Two-factor design}
+\begin{table}[h] \caption{The $ 2^{2} $ factorial design }\label{tab1}
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline Run & A & B \\ 
+\hline 1 & -- & -- \\ 
+\hline 2 & -- & \cellcolor{black!25}+ \\ 
+\hline 3 & \cellcolor{black!25}+ & -- \\ 
+\hline 4 & \cellcolor{black!25}+ & \cellcolor{black!25}+ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{table}
+The most common full factorial designs are two-level experiment designs denoted as $ 2^{n} $ designs, where $2$ denotes the number of levels for each factor to be evaluated and $n$ denotes the total number of factors under study.  The simplest of these is the 2-factor, 2-level design, or the $ 2^{2} $ design that involves 4 sets of conditions, or runs, to complete the experiment.  This number of experimental runs is determined by computing the exponential expression $ 2^{2} = 4 $.
+
+In Table \ref{tab1}, the ''--'' denotes a low level of the corresponding factor (A or B) and the ''+'' denotes a high level of the factor.  Hence the name ''two-factor, two-level design'' where A and B are the two factors and ''--'' and ''+'' denote the two levels.
+
+\subsection{EXAMPLE:The Router Experiment} 
+\label{router}
+A router is a power tool that is used in woodworking (large routers), finishing laminate counter tops (hand-held laminate routers), and small routers are used to cut locating notches on printed circuit boards for electronic devices. In this example the latter device is considered.  The vibration level of the circuit board while being cut is an important parameter that affects product quality.  Two factors are presumed to have an influence on vibration: the cutting speed (Factor A), and the bit size (Factor B).
+
+There are two cutting speeds that can be used and two bit sizes that are reasonable.  Therefore there are four possible combinations as depicted in Table \ref{RoutDes}:
+
+\input{RoutDesgn}
+
+The experimenter has chosen to run four replicates of this experiment.  Four circuit boards are tested at each run condition in the above table.  The response recorded is the vibration level that was achieved by attaching accelerometers to the board along the x, y, and z axes with the resultant vector recorded as the vibration level for that board.  Table \ref{RouterData} summarizes the data collected.
+
+\input{RouterData}
+
+\subsection{Analysis of the response data}
+To analyze this data a simple implementation of Yate's algorithm can be applied in an analysis matrix as shown in Table \ref{2fac2lev_matrix}.
+
+\input{2Fac2Lev_Matrix}
+
+While the experimental runs are actually carried out in a randomized order, the analysis requires that the data be input as standard order as shown in Table \ref{2fac2lev_matrix}. For each run, enter the mean value of the response adjacent to each standard run number.  Note that the experimental data in Table \ref{RouterData} is listed in \textit{run order}. Run \#1 corresponds to standard order 2, run \#2 to standard order 4, etc. The sum of the mean response values is then calculated and entered in the cell just below the last mean response.  Below that is entered the total number of values N (in this example the total is 4). The final entry in this column is calculated by dividing the mean sum by the total number of values to obtain an overall average response.
+
+In the subsequent columns under each main effect and interaction effect, simply copy the mean response for each run (row) across in the cells that are \textit{not shaded}.  Leave the shaded cells vacant in all cases. Again total a sum for each column and a total number of values, only counting cells that have values entered.  The total number of values should be half of what was entered in the first column.  Calculate mean responses for each column using the values in each respective column.
+
+The final step is to calculate the net effect.  In each case, subtract the value of the high level (+) response from the low level (-) response.  The result may be either a positive or negative value depending upon the relative magnitude of the high and low level responses.  Enter the net effect in the  bottom row of the matrix.  The completed analysis matrix for \textit{The Router Experiment}, in Table \ref{Filled_2fac2lev}, provides an example of how to correctly complete this process.
+
+\input{Filled2x2Fac}
+
+
+So what is mean by an ``effect'' of a factor (main or interaction)?  An effect is simply the change in the mean value of the response, $y$, when the factor of interest is changed from its low level to its high level.  The effects for each main and interaction factor are calculated by taking the difference of the average high and average low levels of a factor. By completing the table above, we accomplished this in an organized way. Once the calculations are complete, it is helpful to visualize the results by depicting them graphically in two dimensions plotting the low and high levels of factor A versus factor B as in Figure \ref{X}.
+
+INSERT FIGURE X HERE\label{2facspace}
+
+
+The experimental ''design space'' for a two-factor, two-level factorial design is a square.  As you will see in  section \ref{DesignSpace} higher order factorial designs have higher dimensional design spaces.
+
+\subsection{Evaluation of interaction effect}
+A simple graphical technique allows for a very rapid evaluation of whether interaction effects are significant.  In this example there is only one potential interaction, the AB interaction.  To determine if the effect is significant, we plot Factor A (bit size) on the x-axis and the value of vibration level on the y-axis for each level of Factor B.  The result for this example experiment is shown in Figure \ref{fig4}.
+\begin{figure}[h]\caption{Interaction plots for the Router Experiment}\label{fig4}
+\begin{center}
+\includegraphics[scale=0.75]{router-int}
+\end{center}
+\end{figure}
+
+This plot greatly simplifies the interpretation of the results.  It becomes obvious that the large bit (1/8th in) results in higher levels of vibration, and using the smaller bit very low levels of vibration are observed.  The cutting speed also has an effect, but it is very small with the smaller bit but much larger when the larger bit is used.  Based on this analysis one would conclude that the smaller bit size is preferred and that if the smaller bit is used then either cutting speed would result in low vibration.  In this case a choice of cutting speed is available to give smoother surface finishes, higher production rates, lower production costs, or to satisfy some other objective.
+
+
+\section{Replication}
+In the example factorial design given in the previous section each possible combination was replicated \textit{four times}. Had only one observation been made for each run and excessive variability exists in the process being studied, the estimates for each response may be far from the true average values. By referring back to table \ref{tab3}, on page \pageref{tab3} the raw data for the router experiment clearly exhibit variability. The effects of variation are reduced by replicating the experiment.  This practice yields at least four benefits:
+
+\begin{enumerate}
+\item mean values are less variable than individual observations -- the distribution of means is always narrower than the distribution of the corresponding individual measurements,
+\item without replication a single erroneous or outlier observation can distort the entire analysis,
+\item replicated experiments provide sufficient data to estimate the amount of variability, and
+\item data from replicated experiments can be used to evaluate which factors influence the mean response and which affect the variability (location and variation statistics).
+\end{enumerate}
+
+To properly replicate an experiment the full set of factor combinations must be repeated.  In the example given earlier in this chapter, the experimenter chose to replicate the experiment four times, and since there are four combinations of factors a total of 16 tests were conducted to collect all of the raw data.  Refer again to section \ref{router} to verify the number of individual observations that were collected.
+
+\section{Three-factor design}
+Three-factor factorial designs are two-level experiments denoted as $ 2^{3} $ designs. The number of experimental runs is determined by computing $ 2^{3} = 8 $ and the design matrix is given in Table \ref{tab4}.
+\begin{table}[h]\caption{The $2^{3}$ factorial design}\label{tab4}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline Run & A & B & C\\ 
+\hline 1 & -- & -- & --\\ 
+\hline 2 & -- & -- & \cellcolor{black!95}+\\ 
+\hline 3 & -- & \cellcolor{black!95}+ & --\\ 
+\hline 4 & -- & \cellcolor{black!95}+ & \cellcolor{black!95}+\\
+\hline 5 & \cellcolor{black!95}+ & -- & --\\
+\hline 6 & \cellcolor{black!95}+ & -- & \cellcolor{black!95}+\\
+\hline 7 & \cellcolor{black!95}+ & \cellcolor{black!95}+ & --\\
+\hline 8 & \cellcolor{black!95}+ & \cellcolor{black!95}+ & \cellcolor{black!95}+\\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{table}
+All possible combination of factors at each level are included in the full factorial design, and as mentioned above  a three-factor experiment requires 8 trial conditions, or runs.  
+
+\subsection{EXAMPLE: Metal Cutting Process}
+A metal cutting process yields an unsatisfactory surface roughness that the process engineer desire to improve.  There are three factors that have been identified for this study: tool angle, depth of cut, and feed rate. Because there is concern to limit costs for this experiment only two replicates are budgeted for this study.  The design matrix with low and high levels for each factor is given in Table \ref{tab5}.
+
+\begin{sidewaystable}\caption{Metal Cutting Experiment Design}\label{tab5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline Run & \textbf{tool angle} & \textbf{depth of cut} & \textbf{feed rate}\\ 
+\hline 1 & $15^{o}$ & 0.025 in & 20 in/min \\ 
+\hline 2 & $15^{o}$ & 0.025 in & 30 in/min \\ 
+\hline 3 & $15^{o}$ & 0.040 in & 20 in/min \\ 
+\hline 4 & $15^{o}$ & 0.040 in & 30 in/min \\
+\hline 5 & $25^{o}$ & 0.025 in & 20 in/min \\
+\hline 6 & $25^{o}$ & 0.025 in & 30 in/min \\
+\hline 7 & $25^{o}$ & 0.040 in & 20 in/min \\
+\hline 8 & $25^{o}$ & 0.040 in & 30 in/min \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{sidewaystable}
+
+The process engineer performed the 16 trials planned for this study and the results appear in Table \ref{tab6}.
+\begin{table}[h]\caption{Metal Cutting Experiment Data Table}\label{tab6}
+\begin{center}
+\begin{tabular}{|l|c|c|c|r|r|r|}
+\hline Run & \textbf{tool angle} & \textbf{depth of cut} & \textbf{feed rate} & \multicolumn{2}{c|}{\textbf{Surface Roughness}} & \textbf{Mean}\\ 
+\hline 1 & $15^{o}$ & 0.025 in & 20 in/min &  9 &  7 &  8.0\\ 
+\hline 2 & $15^{o}$ & 0.025 in & 30 in/min & 10 & 12 & 11.0\\ 
+\hline 3 & $15^{o}$ & 0.040 in & 20 in/min &  9 & 11 & 10.0\\ 
+\hline 4 & $15^{o}$ & 0.040 in & 30 in/min & 12 & 15 & 13.5\\
+\hline 5 & $25^{o}$ & 0.025 in & 20 in/min & 11 & 10 & 10.5\\
+\hline 6 & $25^{o}$ & 0.025 in & 30 in/min & 10 & 13 & 11.5\\
+\hline 7 & $25^{o}$ & 0.040 in & 20 in/min & 10 &  8 &  9.0\\
+\hline 8 & $25^{o}$ & 0.040 in & 30 in/min & 16 & 14 & 15.0\\ 
+\hline 
+
+\end{tabular} 
+\end{center}
+\end{table}
+\subsection{Analysis of the response data}
+The analysis matrix for a three-factor, two-level design is given in Figure \ref{fig5}  with the data filled in and calculations completed for the Metal Cutting Experiment.
+\begin{figure}[h]\caption{Metal Cutting Experiment Analysis Matrix}\label{fig5}
+\begin{center}
+\includegraphics[scale=0.5]{metal}
+\end{center}
+\end{figure}
+Inspection of the bottom row of the analysis matrix shows that factor C (feed rate) has the greatest effect upon surface roughness. The next largest effects are B (cut depth) and BC -- the latter two-factor interaction makes intuitive sense since the two parent main effects are large relative to the magnitude of the other effects.
+
+\subsection{Three-factor design space}\label{DesignSpace}
+Now that the main and interaction effects have been calculated it is helpful to visualize the responses in the geometry of the design space.  As we saw in section \ref{2facspace} a $2^{2}$ factorial design space was a (2-dimensional) square.  Accordingly, Figure \ref{fig6} shows the \textit{3-dimensional} $2^{3}$ factorial design space depicted as a cube.
+\begin{figure}[h]\caption{Metal Cutting Experiment Design Space}\label{fig6}
+\begin{center}
+\includegraphics[scale=0.6]{metal-resp}
+\end{center}
+\end{figure}
+\subsection{Interaction effects}
+The $2^{3}$ factorial design has four possible interaction effects: AB, AC, BC, and ABC.  There are three binary interactions and one ternary.  As the number of factors in a factorial experiment grows, the number of effects that can be estimated also grows, as does the dimensionality of interactions.  In most cases where higher order interactions (three-factor interactions and higher) the \textbf{sparsity of effects principle} applies. This principle is that in most cases the system under study is dominated by main effects and lower-order (binary) interactions.  The three-factor and higher order interaction effects are extremely rare and are therefore negligible.\label{sparsity}
+
+For the metal cutting process we will focus on the two-factor interactions AB, AC, and BC.  The corresponding interaction plots are given in Figure \ref{fig7}.
+\begin{figure}[h]\caption{Metal Cutting Experiment Interaction Plots}\label{fig7}
+\begin{center}
+\includegraphics[scale=0.5]{metal-int}
+\end{center}
+\end{figure}
+A quick comparison of the magnitudes of the AB and AC effects and the corresponding interaction plots above makes it evident that there is little significance to these interactions. In contrast, the BC interaction (depth of cut--feed rate) has an effect with a magnitude almost as large as the B main effect.  The interaction plot suggests that when feed rate is kept at the low level there is negligible change in surface roughness at either level of cut depth, but when feed rate is high the surface roughness significantly increases with deeper cuts.  This analysis makes it relatively easy for the process engineer to settle on the preferred setting for feed rate:  keep it \textit{low}.
+
+\section{Four-factor design}\label{4fac}
+The $2^{4}$ factorial design is perhaps the largest full-factorial design that is practical for most studies in an industrial setting.  The $ 2^{4} = 16 $ runs when replicated translate into a \textit{multiple} of 16 and this can sometimes be cost or time prohibitive.  See Table \ref{tab7} for the $2^{4}$ factorial design matrix.
+
+\begin{table}[h]\caption{The $2^{4}$ factorial design}\label{tab7}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline Run & A & B  & C  & D \\ 
+\hline 1  & -- & -- & -- & --\\ 
+\hline 2  & -- & -- & -- & + \\ 
+\hline 3  & -- & -- & +  & --\\ 
+\hline 4  & -- & -- & +  & + \\
+\hline 5  & -- & +  & -- & --\\
+\hline 6  & -- & +  & -- & + \\
+\hline 7  & -- & +  & +  & --\\
+\hline 8  & -- & +  & +  & + \\
+\hline 9  & +  & -- & -- & --\\
+\hline 10 & +  & -- & -- & + \\
+\hline 11 & +  & -- & +  & --\\
+\hline 12 & +  & -- & +  & + \\
+\hline 13 & +  & +  & -- & --\\
+\hline 14 & +  & +  & -- & + \\
+\hline 15 & +  & +  & +  & --\\
+\hline 16 & +  & +  & +  & + \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{table}
+
+As might be expected, there are many more interaction effects in this higher order design than in previous designs -- and all of them can be estimated. There are six binary, four ternary, and one quaternary for a total of eleven interactions.  As discussed in section \ref{sparsity}, anything higher than the two-factor (binary) interactions is extremely rare and can safely be ignored.
+
+\subsection{EXAMPLE: Milling Operation}
+An industrial milling operation is being evaluated for the quality of surface finish milling on a metal part.  The key parameters that could be controlled in this milling operation are shown in Table \ref{tab8}. Figure \ref{fig8} gives the filled analysis matrix for this experiment.
+
+\subsection{Analysis of the response data}
+Based on the magnitude of calculated effects, main effects A, B, and D stand out, and interaction effects AD and BD are significant contributors.  It is not surprising that the AD and BD interaction effects are significant given that the parent main effects are also strong. If we temporarily disregard the interaction effects and only consider main effects, the experiment indicates that a minimum (desirable) value for surface finish can be achieve with A set high (100 m/min), B set low (1 mm), and D set low (0.25 mm/tooth).\label{maineff}
+
+\begin{table}[h]\caption{Milling Experiment Design}\label{tab8}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline Run & Low Level (--) & High Level (+)  \\ 
+\hline cutting speed & 80 m/min & 100 m/min  \\
+\hline depth of cut & 1 mm & 8 mm \\
+\hline cutter diameter & 100 mm & 200 mm\\
+\hline feed/tooth & 0.25 mm/tooth & 0.65 mm/tooth \\
+\hline
+\end{tabular} 
+\end{center}
+\end{table}
+
+\begin{figure}[h]\caption{Milling Experiment Analysis Matrix}\label{fig8}
+\begin{center}
+\includegraphics[height=4 in, width=6 in]{milling}
+\end{center}
+\end{figure}
+
+\subsection{Interaction effects}
+The $2^{4}$ factorial design has a total of eleven interaction effects.  The sparsity of effects principle (See section \ref{sparsity}) applies to nearly half of these, leaving six two-factor interaction effects to consider.  In this example there are strong effects for factors AD and BD and so a look at the respective interaction plots, in Figure \ref{fig9}, can reveal additional insight into preferred settings.
+
+Now considering the interactions in tandem with main effects suggests a different scenario.  The minimum response is obtained when both A and D are set low. Referring back to section \ref{maineff} when only main effects were considered it was presumed that A should be set \textit{high} and D set low.  Careful consideration of the results is needed here -- as is evident in Figure \ref{fig9} when A is high the average response is not as sensitive to changes in the level of D (the slope is less than when A is low).  Depending on the milling situation then, if factor D is hard to control (or if it were a noise factor) then it would be best to set A at its high level as a means to reduce process variability.
+
+\begin{figure}[h]\caption{Milling Experiment Interaction Plots}\label{fig9}
+\begin{center}
+\includegraphics[scale=0.6]{milling-int}
+\end{center}
+\end{figure}
+
+The BD interaction plot in Figure \ref{fig9} is also an interesting situation. There is less sensitivity (lower slope) when B is set high, but the average response is much lower when B and D are both set to their low levels. The initial recommendation based on these results would be that A be set high, B and D set low with a suggestion that further study may be needed to investigate the interaction of A and B with D. The recommended settings were used in (standard order) trial runs 9 and 11 in Figure \ref{fig8}. The responses for those trial runs were 44 and 49, respectively.  The average of these two runs is 46.5 -- significantly less than the observed overall average response of 69.75 micro inches of surface roughness.
