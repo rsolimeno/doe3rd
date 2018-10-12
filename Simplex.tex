@@ -19,7 +19,7 @@ So should the experimenter just forget about factorial designs and use simplex E
 The simplex is very effective and efficient at moving rapidly on a response surface toward the optimum.  However, when the simplex method has located the region of the optimum it then becomes very inefficient, though still effective, at finding the exact location of the optimum. The recommended approach is to switch to a more powerful experimental design strategy, a CCD for example, for exploring the region of optimum response.
 
 \section{Simplex calculations}\label{simplex-calc}
-Consider a two-factor system from which we desire to optimize the response (a maximum) by use of the sequential simplex algorithm.  Let's assume factor $x_{1}$ corresponds to pressure (in atmospheres)  and $x_{2}$ corresponds to temperature (in degrees Celcius).
+Consider a two-factor system from which we desire to optimize the response (a maximum) by use of the sequential simplex algorithm.  Let's assume factor $x_{1}$ corresponds to pressure (in atmospheres)  and $x_{2}$ corresponds to temperature (in degrees Celsius).
 
 \begin{figure}[h]\caption{Initial Simplex}\label{initsimplex}
 \begin{center}
@@ -31,7 +31,7 @@ The response at coordinate $(1,4)$ is the vertex with the worst (\textbf{W}) res
 
 \begin{enumerate}
 \item Initially, reject the vertex \textbf{W} (worst response),
-\item on all subsequent moves, reject the vertex that was labelled \textbf{NB} in the \textit{previous} simplex,
+\item on all subsequent moves, reject the vertex that was labeled \textbf{NB} in the \textit{previous} simplex,
 \item project through the average of \textbf{NB} and \textbf{B} a desired distance to establish a new vertex,
 \item evaluate the response using the settings at the new vertex coordinate,
 \item determine assignments (\textbf{W}, \textbf{NB} and \textbf{B}) for the new simplex.
@@ -39,7 +39,7 @@ The response at coordinate $(1,4)$ is the vertex with the worst (\textbf{W}) res
 
 The movement from one simplex to the next can move quite easily in this fashion.  When climbing a response surface in which vertex \textbf{NB} and \textbf{B} differ \textit{significantly} the method works effectively and efficiently moving toward the optimum.  So how doe we ensure that he difference between \textbf{NB} and \textbf{B} is \textit{significant}?  The Student's t-test, of course.
 
-The response measurement statistics, calculation of $t_{calc}$, decision to proceed, and calculation of new coordinates can all be readily accomplised in a spreadsheet.  Figure \ref{ss-evop1} shows the spreadsheet for the simplex depicted in Figure \ref{initsimplex} above.
+The response measurement statistics, calculation of $t_{calc}$, decision to proceed, and calculation of new coordinates can all be readily accomplished in a spreadsheet.  Figure \ref{ss-evop1} shows the spreadsheet for the simplex depicted in Figure \ref{initsimplex} above.
 
 \begin{figure}[h]\caption{Simplex EVOP spreadsheet for two factors}\label{ss-evop1}
 \begin{center}
@@ -50,7 +50,7 @@ The response measurement statistics, calculation of $t_{calc}$, decision to proc
 
 Aside from the location and variation statistics of the responses for each vertex in the simplex under study, the key calculations are that of $\overline{P} = \Sigma/n$ (where $\overline{P}$ is the midpoint, or average of the line segment $NB$---$B$) and subsequently $R = \overline{P} + (\overline{P} - W)$, where $R$ corresponds to the coordinates of the next condition to test that forms a new simplex with $NB$ and $B$. The ''permission'' to proceed with evaluating the new condition $R$ is derived by rejecting the null hypothesis of the Student's t-test such that  $t_{calc} > t_{critical}$.  Of course, the $t_{critical}$ value changes with the number of observations of the response, $n$, and this value can either be taken from a published table or by use of a built-in function of the spreadsheet software.
 
-The \textbf{criterion to proceed} with a new condition $R$ in the previous paragraph cannot be overemphasized. If one should encounter a simplex in which the null hypothesis cannot be rejected, then this may suggest a vicinal optimum. If this is indeed the case then it is likely that small differences exist in the response at each vertex.  This may be ''good enough'' for a production process or the investigator may choose to locate an exact optimum by conducting a factorial experiment (with the investment of a larger number of runs) to properly model the surface aroud the optimum.
+The \textbf{criterion to proceed} with a new condition $R$ in the previous paragraph cannot be overemphasized. If one should encounter a simplex in which the null hypothesis cannot be rejected, then this may suggest a vicinal optimum. If this is indeed the case then it is likely that small differences exist in the response at each vertex.  This may be ''good enough'' for a production process or the investigator may choose to locate an exact optimum by conducting a factorial experiment (with the investment of a larger number of runs) to properly model the surface around the optimum.
 
 \section{Comparison to factorial designs}
 In section \ref{penlight} an analogy was made comparing experimentation to being in a dark room.  If using the method of steepest ascent with factorial designs is like holding a penlight in the dark, then using simplex \textsc{evop} is just using pushpins on a blank board.  While both factorial designs and simplex optimization are response surface methods they are different tools that complement each other.  
