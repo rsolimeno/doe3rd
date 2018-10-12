@@ -131,17 +131,19 @@ Hopefully this process is never out of specification!
 \section{Accuracy \& Precision}
 \subsection{Accuracy}
 \index{accuracy}\index{precision}\index{average}
-Accuracy is a measure of how close a measurement is to the true value of the property being measured.  The closer the (average) measured value is to the ''true value'' (usually unknown) reflects a higher degree of accuracy in the measurement.  One cannot rely on a single measurement so normal practice is to repeat measurements on a single sample or multiple samples (if the test is destructive) and to report the average value. Figure \ref{fig1} depicts accuracy versus precision graphically. The Central Limit Theorem states that:
+Accuracy is a measure of how close a measurement is to the true value of the property being measured.  The closer the (average) measured value is to the ''true value'' (usually unknown) reflects a higher degree of accuracy in the measurement.  One cannot rely on a single measurement so normal practice is to repeat measurements on a single sample or multiple samples (if the test is destructive) and to report the average value. Figure \ref{AvsP} depicts accuracy versus precision graphically. The Central Limit Theorem states that:
 \begin{quote}
 conditions under which the sum of a sufficiently large number of independent random variables, each with finite mean and variance, will be approximately normally distributed.\cite{rice1995mathematical} \index{mean}
 \end{quote}
 \index{average}\index{variance}\index{variation}
 Thus the average value of a ''sufficiently large number of independent random variables'' will tend to be closer to the true value than will any single observation.  This however, does not necessarily infer that the variation is small!
 
-\begin{figure}[h]\caption{Accuracy versus Precision}\label{fig1}
-\begin{center}
-\includegraphics[scale=0.5]{accuracy-vs-precision}
-\end{center}
+\begin{figure}
+	\begin{center}
+		\vspace{3mm}
+		\includegraphics[scale=1.8]{1accuracy-1.mps}\hspace{5mm}\includegraphics[scale=1.8]{1precision-1.mps}
+	\end{center}
+	\caption{Accuracy versus Precision. Accuracy, left, is error-prone with high variance \textit{but on the average} is more target-centered. Precision, right, shows evidence of \textit{repeatability} and is \textit{reproducible} yet off-centered.}\label{AvsP}
 \end{figure}
 
 \subsection{Precision}
