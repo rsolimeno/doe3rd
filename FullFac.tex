@@ -43,39 +43,27 @@ For experiments with many factors this can lead to a large number of runs, or te
 \end{table}
 The most common full factorial designs are two-level experiment designs denoted as $ 2^{n} $ designs, where $2$ denotes the number of levels for each factor to be evaluated and $n$ denotes the total number of factors under study.  The simplest of these is the 2-factor, 2-level design, or the $ 2^{2} $ design that involves 4 sets of conditions, or runs, to complete the experiment.  This number of experimental runs is determined by computing the exponential expression $ 2^{2} = 4 $.
 
-In Table \ref{tab1}, the ''--'' denotes a low level of the corresponding factor (A or B) and the ''+'' denotes a high level of the factor.  Hence the name ''two-factor, two-level design'' where A and B are the two factors and ''--'' and ''+'' denote the two levels.
+In Table \ref{tab1}, the ''--'' denotes a low level of the corresponding factor (A or B) and the ''+'' denotes a high level of the factor.  Hence the name ''two-factor, two-level design'' where A and B are the two factors and ''--'' and ''+'' denote the two levels. In the example that follows we will run an experiment, collect individual observations of repeated runs, and analyze the data ``manually'' (and is easily done with spreadsheet software).
 
-\subsection{EXAMPLE:The Router Experiment} 
+\subsection{EXAMPLE:The Pump Experiment} 
 \label{router}
-A router is a power tool that is used in woodworking (large routers), finishing laminate counter tops (hand-held laminate routers), and small routers are used to cut locating notches on printed circuit boards for electronic devices. In this example the latter device is considered.  The vibration level of the circuit board while being cut is an important parameter that affects product quality.  Two factors are presumed to have an influence on vibration: the cutting speed (Factor A), and the bit size (Factor B).
+A diaphragm pump is one in which a diaphragm, made of or coated with a chemically resistant material (such as PTFE), is actuated in successive compression/decompression cycles to deliver liquid materials. The liquid does not penetrate through the diaphragm. The repeated compression/decompression changes the volume of a chamber in the pump head so that liquid enters through an inlet check valve during decompression and exits through an outlet check valve during compression, effectively pushing material through the chamber.   Two factors are presumed to have an influence on pump metering accuracy: the output check value spring size (Factor A), and  the pump speed (Factor B). These two factors are independent since each can be changed by a process operator without influencing the other factor, i.e. pump speed does not influence the check valve and vice-versa.
 
-There are two cutting speeds that can be used and two bit sizes that are reasonable.  Therefore there are four possible combinations as depicted in Table \ref{RoutDes}:
+There are two pump speeds that can be used and two spring sizes that are reasonable.  Therefore there are four possible combinations as depicted in Table \ref{RoutDes}:
 
 \input{RoutDesgn}
 
-The experimenter has chosen to run four replicates of this experiment.  Four circuit boards are tested at each run condition in the above table.  The response recorded is the vibration level that was achieved by attaching accelerometers to the board along the x, y, and z axes with the resultant vector recorded as the vibration level for that board.  Table \ref{RouterData} summarizes the data collected.
+The experimenter has chosen to run four replicates of this experiment.  Four vessels are weighed at each run condition in the above table.  The data recorded is the mass of liquid delivered by the pump at the set speed and size of springs used. The goal of the experiment is to deliver a specific mass of material at the desired rate, and the response variable to be analyzed is the deviation in milligrams of the target mass delivered.. Table \ref{RouterData} summarizes the data collected.
 
-\renewcommand{\arraystretch}{1.7} %<- modify value to suit your needs
-\begin{table}[]
-	\begin{center}
-	\begin{tabular}{lcc|r|r|r|r|r}
-		\cline{4-7}
-		& \multicolumn{1}{l}{}                                                                   & \multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Replicates}}                                                                                              & \multicolumn{1}{l}{}                                                                   \\ \hline
-		\multicolumn{1}{|l|}{\textbf{Run Order}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Cutting \\ Speed\end{tabular}}} & \textbf{Bit Size}     & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{\textbf{2}} & \multicolumn{1}{c|}{\textbf{3}} & \multicolumn{1}{c|}{\textbf{4}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Mean \\ Response\end{tabular}}} \\ \hline
-		\multicolumn{1}{|l|}{1}            & \multicolumn{1}{c|}{40 rpm}                                                            & 1/8th in              & 18.2                            & 18.9                            & 12.9                            & 14.4                            & \multicolumn{1}{r|}{16.1}                                                              \\ \hline
-		\multicolumn{1}{|l|}{2}            & \multicolumn{1}{c|}{90 rpm}                                                            & 1/8th in              & 27.2                            & 24.0                            & 22.4                            & 22.5                            & \multicolumn{1}{r|}{24.0}                                                              \\ \hline
-		\multicolumn{1}{|l|}{3}            & \multicolumn{1}{c|}{40 rpm}                                                            & 1/16th in             & 15.9                            & 14.5                            & 15.1                            & 14.2                            & \multicolumn{1}{r|}{14.9}                                                              \\ \hline
-		\multicolumn{1}{|l|}{4}            & \multicolumn{1}{c|}{90 rpm}                                                            & 1/16th in             & 41.0                            & 43.9                            & 36.3                            & 39.9                            & \multicolumn{1}{r|}{40.3}                                                              \\ \hline
-	\end{tabular}\caption{Router Experiment Data Table}\label{RouterData}
-\end{center}
-\end{table}
-
+\input{RouterData}
 
 
 \subsection{Analysis of the response data}
-To analyze this data a simple implementation of Yate's algorithm can be applied in an analysis matrix as shown in Table \ref{2fac2lev_matrix}.
+To analyze this data a simple implementation of Yates algorithm can be applied in an analysis matrix as shown in Table \ref{2fac2lev_matrix}.
 
-\input{2Fac2Lev_Matrix}
+\begin{center}
+	\input{2Fac2Lev_Matrix}
+\end{center}
 
 While the experimental runs are actually carried out in a randomized order, the analysis requires that the data be input as standard order as shown in Table \ref{2fac2lev_matrix}. For each run, enter the mean value of the response adjacent to each standard run number.  Note that the experimental data in Table \ref{RouterData} is listed in \textit{run order}. Run \#1 corresponds to standard order 2, run \#2 to standard order 4, etc. The sum of the mean response values is then calculated and entered in the cell just below the last mean response.  Below that is entered the total number of values N (in this example the total is 4). The final entry in this column is calculated by dividing the mean sum by the total number of values to obtain an overall average response.
 
@@ -86,22 +74,70 @@ The final step is to calculate the net effect.  In each case, subtract the value
 \input{Filled2x2Fac}
 
 
-So what is mean by an ``effect'' of a factor (main or interaction)?  An effect is simply the change in the mean value of the response, $y$, when the factor of interest is changed from its low level to its high level.  The effects for each main and interaction factor are calculated by taking the difference of the average high and average low levels of a factor. By completing the table above, we accomplished this in an organized way. Once the calculations are complete, it is helpful to visualize the results by depicting them graphically in two dimensions plotting the low and high levels of factor A versus factor B as in Figure \ref{X}.
+So what is mean by an ``effect'' of a factor (main or interaction)?  An effect is simply the change in the mean value of the response, $y$, when the factor of interest is changed from its low level to its high level.  The effects for each main and interaction factor are calculated by taking the difference of the average high and average low levels of a factor. By completing the table above, we accomplished this in an organized way. Table \ref{Filled_2fac2lev} reveals that the largest effect was A - Cutting Speed. While this ``manual'' method is very easy to carry out and provides a quantitative comparison of effects, we can get much more information out of this experimental work by analyzing the data using R statistics software (along with RStudio).
 
-INSERT FIGURE X HERE\label{2facspace}
+\subsection{Analysis using R}
+The first task when doing an analysis in R is to properly input the experimental data in a form that is easy to analyze. Fortunately we can take advantage of spreadsheet software to enter the data in rows and columns. For the router experiment we enter the data as shown in Figure \ref{spread}.
 
-
-The experimental ''design space'' for a two-factor, two-level factorial design is a square.  As you will see in  section \ref{DesignSpace} higher order factorial designs have higher dimensional design spaces.
-
-\subsection{Evaluation of interaction effect}
-A simple graphical technique allows for a very rapid evaluation of whether interaction effects are significant.  In this example there is only one potential interaction, the AB interaction.  To determine if the effect is significant, we plot Factor A (bit size) on the x-axis and the value of vibration level on the y-axis for each level of Factor B.  The result for this example experiment is shown in Figure \ref{fig4}.
-\begin{figure}[h]\caption{Interaction plots for the Router Experiment}\label{fig4}
+\begin{figure}
 \begin{center}
-\includegraphics[scale=0.75]{router-int}
+		\includegraphics[scale=1]{SpreadData}
 \end{center}
+	\caption{Experimental Data entered into a spreadsheet. Columns indicate runs and rows are replicated runs.}\label{spread}
 \end{figure}
 
-This plot greatly simplifies the interpretation of the results.  It becomes obvious that the large bit (1/8th in) results in higher levels of vibration, and using the smaller bit very low levels of vibration are observed.  The cutting speed also has an effect, but it is very small with the smaller bit but much larger when the larger bit is used.  Based on this analysis one would conclude that the smaller bit size is preferred and that if the smaller bit is used then either cutting speed would result in low vibration.  In this case a choice of cutting speed is available to give smoother surface finishes, higher production rates, lower production costs, or to satisfy some other objective.
+The row and column labels in the spreadsheet are there to help us with data entry, ensuring that we have the correct data representing each replicate of each run in the experiment that we designed. We also enter the data in the random run order as carried out experimentally (no need to sort by standard order). Now we develop the R code for the analysis:
+
+\input{2Fac2Lev.R}
+
+\noindent\textbf{Output}: (displayed in the console)
+
+\noindent\texttt{ANOVA results:}
+
+\begin{verbatim}
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+A            1 1107.2  1107.2  23.742 0.000383 ***
+B            1   41.9    41.9   0.899 0.361755    
+A:B          1    1.1     1.1   0.023 0.883184    
+Residuals   12  559.6    46.6                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+\end{verbatim}
+
+The ANOVA results tell the same story as the evaluation by Yates algorithm in the manual method: Factor A (Cutting Speed) has the largest effect and is statistically significant. The ANOVA adds the statistical significance because the right-most column of the analysis, \textbf{Pr(>F)}, lists the probability that the group mean values are so similar that any effect is ``buried in the noise.'' This is the null hypothesis -- that they are the same. The default decision criterion is a probability at 5\%, or 0.05 as displayed in the table. Any value in the \textbf{Pr(>F)} column that is less than the critical value (p < 0.05) is considered a statistically significant effect. Given these guidelines it is easy to see that Factor A has a very low p value (and the *** denotes significance down to the o.1\% level, well below the 5\% criterion). Factor B and the A-B interaction effects are both greater than the default criterion, and thus are just noise.
+
+Once the calculations are complete, it is helpful to visualize the results by depicting them graphically in two dimensions. First we generate an interaction plot to confirm what we learned in the ANOVA, shown in Figure \ref{intplot}. Next we look at two diagnostic plots: residuals versus fitted points, and a normal quantile-quantile plot shown together in Figure \ref{diagplot}. The residuals plot should appear as a random display of scattered points, as it helps determine whether there are violations of the assumptions of the statistical model. Here are some of the assumptions for a linear model such as is being used here:
+
+\begin{enumerate}
+	\item The estimate exists.
+	\item The dependent variable approximates a multivariate normal distribution. 
+	\item Unbiasedness: $E\hat{\beta} = \beta$.
+	\item Consistency: $\hat{\beta}\rightarrow\beta$ as $n\rightarrow\infty$ ($n$ here is the size of a data sample).
+	\item Efficiency: $Var(\hat{\beta})$ is smaller than $Var(\tilde{\beta})$ for alternative estimates $\tilde{\beta}$ of $\beta$.
+	\item The ability to either approximate or calculate the distribution function of $\hat{\beta}$.
+\end{enumerate}
+
+However, what we observe in the left plot Figure \ref{diagplot} is \textit{heteroscedasticity}, meaning that there are subsets of observations that have different variability than others.\cite{Wikipedia2018} In other words, as the predicted outcome (by the linear model) gets larger, the variance grows. We would expect \textit{homoscedasticity}, where the variance level is stable for all predicted outcomes. This violates the consistency assumption mentioned above. While notable, it is quite common in the real world.
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\linewidth]{IntPlot.eps}
+	\end{center}
+	\caption{Interaction plot of Cutting Speed versus Bit Size. There is no evidence of interaction since the lines do not intersect. The dashed line, representing the 1/16'' bit, exhibits higher vibration at both levels of cutting speed.}\label{intplot}
+\end{figure}
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\linewidth]{diags.eps}
+	\end{center}
+	\caption{Residuals plot (left), and the Normal Q-Q plot (right).}\label{diagplot}
+\end{figure}
+
+The right plot in Figure \ref{diagplot} tests the assumption of normally distributed values of the dependent variable (the observed responses). This is just a visual check; as opposed to a statistical evaluation of data assumed to be normally distributed. If our assumption is plausible then the points should fall approximately on a straight line. This is what we see in Figure \ref{diagplot}.
+
+This experiment simultaneously evaluated two factors (cutting speed and bit size) at two levels each. A simple implementation of Yates algorithm revealed that cutting speed was the most significant factor and there was no evidence of interaction between cutting speed and bit size. A second and more sophisticated analytical approach used the R statistics software to analyze the experimental data. The ANOVA analysis yielded the same result and the modeling effort provided additional diagnostics to determine if the model assumptions were held. Either of these two analytical approaches is a vast improvement over testing factors one at a time.
 
 
 \section{Replication}
@@ -157,7 +193,7 @@ A metal cutting process yields an unsatisfactory surface roughness that the proc
 \end{sidewaystable}
 
 The process engineer performed the 16 trials planned for this study and the results appear in Table \ref{tab6}.
-\begin{table}[h]\caption{Metal Cutting Experiment Data Table}\label{tab6}
+\begin{sidewaystable}[h]\caption{Metal Cutting Experiment Data Table}\label{tab6}
 \begin{center}
 \begin{tabular}{|l|c|c|c|r|r|r|}
 \hline Run & \textbf{tool angle} & \textbf{depth of cut} & \textbf{feed rate} & \multicolumn{2}{c|}{\textbf{Surface Roughness}} & \textbf{Mean}\\ 
@@ -173,7 +209,7 @@ The process engineer performed the 16 trials planned for this study and the resu
 
 \end{tabular} 
 \end{center}
-\end{table}
+\end{sidewaystable}
 \subsection{Analysis of the response data}
 The analysis matrix for a three-factor, two-level design is given in Figure \ref{fig5}  with the data filled in and calculations completed for the Metal Cutting Experiment.
 \begin{figure}[h]\caption{Metal Cutting Experiment Analysis Matrix}\label{fig5}
@@ -252,7 +288,7 @@ Based on the magnitude of calculated effects, main effects A, B, and D stand out
 
 \begin{figure}[h]\caption{Milling Experiment Analysis Matrix}\label{fig8}
 \begin{center}
-\includegraphics[height=4 in, width=6 in]{milling}
+\includegraphics[width=\linewidth]{milling}
 \end{center}
 \end{figure}
 
@@ -263,7 +299,7 @@ Now considering the interactions in tandem with main effects suggests a differen
 
 \begin{figure}[h]\caption{Milling Experiment Interaction Plots}\label{fig9}
 \begin{center}
-\includegraphics[scale=0.6]{milling-int}
+\includegraphics[width=\linewidth]{milling-int}
 \end{center}
 \end{figure}
 

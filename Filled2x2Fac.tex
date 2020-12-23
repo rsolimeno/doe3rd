@@ -2,6 +2,7 @@
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{sidewaystable}[]
+	{\renewcommand{\arraystretch}{1.8} %<- modify value to suit your needs
 \begin{tabular}{|c|l|c|l|c|l|r|r|r|r|r|r|}
 \hline
 \multicolumn{2}{|c|}{\begin{tabular}[c]{@{}c@{}}Random \\ \\ Run Order\end{tabular}} & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Standard \\ \\ Order\end{tabular}} & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}Mean\\ Response\end{tabular}} & \multicolumn{2}{c|}{\textbf{A}}                                                   & \multicolumn{2}{c|}{\textbf{B}}                                   & \multicolumn{2}{c|}{\textbf{AB}}                                  \\ \hline
@@ -14,5 +15,5 @@
 \multicolumn{4}{|r|}{\textbf{N:}}                                                                                                                                        & \multicolumn{2}{c|}{4}                                                       & 2                               & 2                                               & 2                               & 2                               & 2                               & 2                               \\ \hline
 \multicolumn{4}{|r|}{\textbf{MEAN:}}                                                                                                                                     & \multicolumn{2}{c|}{23.83}                                                   & 15.50                           & 32.15                                           & 27.60                           & 20.05                           & 28.20                           & 19.45                           \\ \hline
 \multicolumn{4}{|r|}{\textbf{EFFECT:}}                                                                                                                                   & \multicolumn{2}{l|}{\cellcolor[HTML]{000000}}                                & \multicolumn{2}{c|}{\textbf{16.65}}                                               & \multicolumn{2}{c|}{\textbf{-7.55}}                               & \multicolumn{2}{c|}{\textbf{-8.75}}                               \\ \hline
-\end{tabular}\caption{Router Experiment Analysis Matrix}\label{Filled_2fac2lev}
+\end{tabular} } \caption{Router Experiment Analysis Matrix}\label{Filled_2fac2lev}
 \end{sidewaystable}
