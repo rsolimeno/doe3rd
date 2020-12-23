@@ -125,11 +125,11 @@ To generate the design, the process engineer used the design generator $E = ABCD
 \subsection{Analysis of the response data}
 Since the significance of the higher order interaction effects are very sparse, only the main effects and two-factor interaction effects were analyzed (see Figure \ref{fig10}). Based on the magnitude of calculated effects, main effects A, C, and (to a lesser extent) E stand out, and interaction effects AC and DE are significant contributors. The significance of AC is not surprising given that both A and C main effects are also strong. It is interesting that DE is quite strong since main effect D is not significant, and the magnitude of main effect E is less than the effect of DE.  This suggests some synergy may be occurring.
 
-\begin{figure}[h]\caption{Chemical Manufacturing Experiment Analysis Matrix}\label{fig10}
+\begin{sidewaysfigure}[h]\caption{Chemical Manufacturing Experiment Analysis Matrix}\label{fig10}
 \begin{center}
-\includegraphics[height=2.5 in, width=5 in]{ChemMfg}
+\includegraphics[width=\textwidth]{ChemMfg}
 \end{center}
-\end{figure}
+\end{sidewaysfigure}
 
 In addition to simple inspection of the effect values, it is very helpful to use a graphic device for analysis.  Figure \ref{fig11} gives the \textbf{normal probability plot} of the same data with the effects sorted in ascending order.  This plot was generated in a spreadsheet.  Interpretation is aided by the addition of a trend line that fits the normally distributed points (mostly falling on a straight line in the center of the plot).  The outliers are those effects with a significant ''signal'' -- if any given effect is just random noise, then these (averaged values) are normally distributed.
 
@@ -144,11 +144,11 @@ So as one can see in Figure \ref{fig11} the same effects discussed above namely,
 
 A comparison of the interaction effects in Figure \ref{fig12} illustrates the previous point about relative magnitudes of effects versus proximity to the normal line.  Interaction AC is the larger effect and shows that when factors A and C are both set at their high levels there is a synergistic effect and the chemical yield approaches 90\% conversion.  In contrast the DE interaction is more mild, having a smaller slope and with factors D and E both set low there is only about a 3\% gain in yield over setting D to the high level (factor E adversely affects yield across the board when set high).
 
-\begin{figure}[h]\caption{Chemical Manufacturing Experiment Interaction Plots}\label{fig12}
+\begin{sidewaysfigure}[h]\caption{Chemical Manufacturing Experiment Interaction Plots}\label{fig12}
 \begin{center}
-\includegraphics[height=3 in, width=6 in]{ChemMfg-int}
+\includegraphics[width=\textwidth]{ChemMfg-int}
 \end{center}
-\end{figure}
+\end{sidewaysfigure}
 
 
 

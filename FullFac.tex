@@ -286,21 +286,27 @@ Based on the magnitude of calculated effects, main effects A, B, and D stand out
 \end{center}
 \end{table}
 
-\begin{figure}[h]\caption{Milling Experiment Analysis Matrix}\label{fig8}
+\begin{sidewaysfigure}[h]\caption{Milling Experiment Analysis Matrix}\label{fig8}
 \begin{center}
+<<<<<<< HEAD
 \includegraphics[width=\linewidth]{milling}
+=======
+\includegraphics[width=\textwidth]{milling}
+>>>>>>> 1ff93b714085cfe057adea807a5a9f9aced6281f
 \end{center}
-\end{figure}
+\end{sidewaysfigure}
 
 \subsection{Interaction effects}
 The $2^{4}$ factorial design has a total of eleven interaction effects.  The sparsity of effects principle (See section \ref{sparsity}) applies to nearly half of these, leaving six two-factor interaction effects to consider.  In this example there are strong effects for factors AD and BD and so a look at the respective interaction plots, in Figure \ref{fig9}, can reveal additional insight into preferred settings.
 
 Now considering the interactions in tandem with main effects suggests a different scenario.  The minimum response is obtained when both A and D are set low. Referring back to section \ref{maineff} when only main effects were considered it was presumed that A should be set \textit{high} and D set low.  Careful consideration of the results is needed here -- as is evident in Figure \ref{fig9} when A is high the average response is not as sensitive to changes in the level of D (the slope is less than when A is low).  Depending on the milling situation then, if factor D is hard to control (or if it were a noise factor) then it would be best to set A at its high level as a means to reduce process variability.
 
-\begin{figure}[h]\caption{Milling Experiment Interaction Plots}\label{fig9}
+\begin{sidewaysfigure}[h]\caption{Milling Experiment Interaction Plots}\label{fig9}
 \begin{center}
+
 \includegraphics[width=\linewidth]{milling-int}
+
 \end{center}
-\end{figure}
+\end{sidewaysfigure}
 
 The BD interaction plot in Figure \ref{fig9} is also an interesting situation. There is less sensitivity (lower slope) when B is set high, but the average response is much lower when B and D are both set to their low levels. The initial recommendation based on these results would be that A be set high, B and D set low with a suggestion that further study may be needed to investigate the interaction of A and B with D. The recommended settings were used in (standard order) trial runs 9 and 11 in Figure \ref{fig8}. The responses for those trial runs were 44 and 49, respectively.  The average of these two runs is 46.5 -- significantly less than the observed overall average response of 69.75 micro inches of surface roughness.

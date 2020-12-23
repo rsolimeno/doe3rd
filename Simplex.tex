@@ -16,14 +16,14 @@ This method of sequential movement away from worst responses has the effect of c
 So should the experimenter just forget about factorial designs and use simplex EVOP for everything?  Absolutely not!\\
 
 
-The simplex is very effective and efficient at moving rapidly on a response surface toward the optimum.  However, when the simplex method has located the region of the optimum it then becomes very inefficient, though still effective, at finding the exact location of the optimum. The recommended approach is to switch to a more powerful experimental design strategy, a CCD for example, for exploring the region of optimum response.
+The simplex is very effective and efficient at moving rapidly on a response surface toward the optimum.  However, when the simplex method has located the general region of the optimum it then becomes very inefficient, though still effective, at finding the exact location of the optimum. The recommended approach is to switch to a more powerful experimental design strategy, a Central Composite Designs (CCD) for example, to explore the region of optimum response.
 
 \section{Simplex calculations}\label{simplex-calc}
 Consider a two-factor system from which we desire to optimize the response (a maximum) by use of the sequential simplex algorithm.  Let's assume factor $x_{1}$ corresponds to pressure (in atmospheres)  and $x_{2}$ corresponds to temperature (in degrees Celsius).
 
 \begin{figure}[h]\caption{Initial Simplex}\label{initsimplex}
 \begin{center}
-\includegraphics[scale=0.75]{initsimplex}
+\includegraphics[width=\textwidth]{initsimplex}
 \end{center}
 \end{figure}
 
@@ -43,7 +43,7 @@ The response measurement statistics, calculation of $t_{calc}$, decision to proc
 
 \begin{figure}[h]\caption{Simplex EVOP spreadsheet for two factors}\label{ss-evop1}
 \begin{center}
-\includegraphics[scale=0.3]{ss-evop1}
+\includegraphics[width=\textwidth]{ss-evop1}
 \end{center}
 \end{figure}
 
@@ -53,6 +53,6 @@ Aside from the location and variation statistics of the responses for each verte
 The \textbf{criterion to proceed} with a new condition $R$ in the previous paragraph cannot be overemphasized. If one should encounter a simplex in which the null hypothesis cannot be rejected, then this may suggest a vicinal optimum. If this is indeed the case then it is likely that small differences exist in the response at each vertex.  This may be ''good enough'' for a production process or the investigator may choose to locate an exact optimum by conducting a factorial experiment (with the investment of a larger number of runs) to properly model the surface around the optimum.
 
 \section{Comparison to factorial designs}
-In section \ref{penlight} an analogy was made comparing experimentation to being in a dark room.  If using the method of steepest ascent with factorial designs is like holding a penlight in the dark, then using simplex \textsc{evop} is just using pushpins on a blank board.  While both factorial designs and simplex optimization are response surface methods they are different tools that complement each other.  
+In section \ref{penlight} an analogy was made comparing experimentation to being in a dark room.  If using the method of steepest ascent with factorial designs is like holding a penlight in the dark, then using simplex \textsc{evop} is just using pushpins on a blank board.  While both factorial designs and simplex optimization are methods that explore the response surface, they are different tools that complement each other.  
 
-As described in section \ref{evop}, the great strength of the simplex method is the economy in experimental runs to reach the vicinity of the optimum.  This is achieved at the expense of deriving a model of the surface, mapping the experimental region of interest, and visualizing the response surface model.  These are the strengths of the factorial designs, like the CCD, that cost more (in terms of experimental runs and effort) but yield more information.
+As described in section \ref{evop}, the great strength of the simplex method is the economy in experimental runs to reach the \textit{vicinity} of  optimum response.  This is achieved at the expense of deriving a model of the surface, mapping the experimental region of interest, and visualizing the response surface model.  Those are the strengths of factorial and response surface designs, like the CCD, that cost more (in terms of experimental runs and effort) but yield more information.
