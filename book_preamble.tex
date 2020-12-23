@@ -6,19 +6,24 @@
 \usepackage{calc} % to perform arithmetic on the arguments of the LATEX commands \setcounter, \addtocounter, \setlength, and \addtolength
 
 								% BIBLIOGRAPHY PACKAGES
-%\usepackage[backend=biber, style=numeric]{biblatex}
-%\addbibresource{doe.bib}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{doe.bib}
 
 \usepackage{amsmath}			% MATHEMATICS PACKAGES
 \usepackage{amsfonts}			%	V
 \usepackage{amssymb}			%	V
 
-\usepackage{chemfig}			% CHEMISTRY PACKAGES
-\usepackage[version=4]{mhchem} 	%	V
-\usepackage{chemformula}		%	V
-\usepackage{chemmacros}			%	V
-\usepackage{endiagram}			%	V
-%\usepackage{mol2chemfig}		%	V
+%\usepackage{chemfig}			% CHEMISTRY PACKAGES
+%\usepackage[version=4]{mhchem} 	%	V
+%\usepackage{chemformula}		%	V
+%\usepackage{chemmacros}			%	V
+%\usepackage{endiagram}			%	V
+%%\usepackage{mol2chemfig}		%	V
+
+% preamble:
+% uses siunits (loaded by endiagram)
+%\DeclareSIUnit{\calory}{cal}
+%\sisetup{per-mode = fraction}
 
 
 \usepackage[T1]{fontenc}		% FONTS
@@ -79,10 +84,7 @@
 % Invoke all modules of chemmacros
 %\usechemmodule{all}
 
-% preamble:
-% uses siunits (loaded by endiagram)
-\DeclareSIUnit{\calory}{cal}
-\sisetup{per-mode = fraction}
+
 
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 
