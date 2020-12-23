@@ -20,6 +20,11 @@
 %\usepackage{endiagram}			%	V
 %%\usepackage{mol2chemfig}		%	V
 
+% preamble:
+% uses siunits (loaded by endiagram)
+%\DeclareSIUnit{\calory}{cal}
+%\sisetup{per-mode = fraction}
+
 
 \usepackage[T1]{fontenc}		% FONTS
 \usepackage{tgtermes} 			% body font
@@ -79,10 +84,7 @@
 % Invoke all modules of chemmacros
 %\usechemmodule{all}
 
-% preamble:
-% uses siunits (loaded by endiagram)
-\DeclareSIUnit{\calory}{cal}
-\sisetup{per-mode = fraction}
+
 
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 
